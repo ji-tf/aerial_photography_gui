@@ -6,65 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1028</width>
-    <height>960</height>
+    <width>1035</width>
+    <height>962</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Aerial Photography GUI</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label_passport_afs">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>152</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Паспорт аэрофотосъёмки&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QFrame" name="frame_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>290</y>
-     <width>991</width>
-     <height>37</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Выбор камеры</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="text">
-       <string>Sony RX1RM2</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_2">
-      <property name="text">
-       <string>Sony A6000</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QFrame" name="object">
    <property name="geometry">
     <rect>
@@ -290,17 +238,169 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="clear">
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>10</x>
+     <y>770</y>
+     <width>1001</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_add_information">
+      <property name="text">
+       <string>Дополнительные сведения по требованию ТЗ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="text_add_information"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="equipment">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>600</y>
+     <width>1001</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_lidar_sn">
+      <property name="text">
+       <string>Лидар, серийный номер</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2" colspan="3">
+     <widget class="QLineEdit" name="definition_block"/>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QLabel" name="label_aircraft">
+      <property name="text">
+       <string>Воздушное судно</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2" colspan="3">
+     <widget class="QLineEdit" name="other_equipment">
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2" colspan="3">
+     <widget class="QLineEdit" name="aircraft">
+      <property name="text">
+       <string>Геоскан 201 Агрогеодезия</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QLineEdit" name="lidar_sn">
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="label_receiver">
+      <property name="text">
+       <string>ГНСС-приёмник, тип, модель</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="lidar_type">
+      <property name="text">
+       <string>Нет</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_lidar_type">
+      <property name="text">
+       <string>Лидар (тип)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLabel" name="label_definition_block">
+      <property name="text">
+       <string>Блок определения положения и ориентации, тип, модель, состав</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="label_other_equipment">
+      <property name="text">
+       <string>Прочая аппаратура</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2" colspan="3">
+     <widget class="QLineEdit" name="receiver">
+      <property name="text">
+       <string>Topcon OEM</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="save">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
      <y>920</y>
      <width>101</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Очистить форму</string>
+    <string>Сохранить</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_passport_afs">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>152</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Паспорт аэрофотосъёмки&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QFrame" name="camera_3">
@@ -528,257 +628,61 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="save">
+  <widget class="QFrame" name="frame_2">
    <property name="geometry">
     <rect>
-     <x>900</x>
+     <x>10</x>
+     <y>290</y>
+     <width>991</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Выбор камеры</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton">
+      <property name="text">
+       <string>Sony RX1RM2</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton_2">
+      <property name="text">
+       <string>Sony A6000</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="clear">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
      <y>920</y>
      <width>101</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Сохранить</string>
+    <string>Очистить форму</string>
    </property>
-  </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>770</y>
-     <width>1001</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_add_information">
-      <property name="text">
-       <string>Дополнительные сведения по требованию ТЗ</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="equipment">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>600</y>
-     <width>1001</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="3">
-     <widget class="QLabel" name="label_lidar_sn">
-      <property name="text">
-       <string>Лидар, серийный номер</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2" colspan="3">
-     <widget class="QLineEdit" name="definition_block"/>
-    </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QLabel" name="label_aircraft">
-      <property name="text">
-       <string>Воздушное судно</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2" colspan="3">
-     <widget class="QLineEdit" name="other_equipment">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2" colspan="3">
-     <widget class="QLineEdit" name="aircraft">
-      <property name="text">
-       <string>Геоскан 201 Агрогеодезия</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="QLineEdit" name="lidar_sn">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="label_receiver">
-      <property name="text">
-       <string>ГНСС-приёмник, тип, модель</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lidar_type">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_lidar_type">
-      <property name="text">
-       <string>Лидар (тип)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QLabel" name="label_definition_block">
-      <property name="text">
-       <string>Блок определения положения и ориентации, тип, модель, состав</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_other_equipment">
-      <property name="text">
-       <string>Прочая аппаратура</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2" colspan="3">
-     <widget class="QLineEdit" name="receiver">
-      <property name="text">
-       <string>Topcon OEM</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>definition_block</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>942</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>361</x>
-     <y>656</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>overlap_transverse</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>265</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>length_afs</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>207</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>area_afs</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>178</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>type_shoot</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>overlap_longitudinal</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>419</x>
-     <y>265</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
@@ -790,24 +694,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>419</x>
-     <y>62</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>customer</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>920</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>792</x>
-     <y>91</y>
+     <x>211</x>
+     <y>43</y>
     </hint>
    </hints>
   </connection>
@@ -823,7 +711,391 @@
     </hint>
     <hint type="destinationlabel">
      <x>792</x>
-     <y>62</y>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>customer</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>type_shoot</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>area_afs</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>length_afs</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>188</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>overlap_transverse</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>overlap_longitudinal</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>height_3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>resolution_3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>coordinate_orientation_3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>480</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>pixel_size_3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>480</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>definition_block</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>920</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>642</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>text_add_information</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>921</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>770</x>
+     <y>799</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>camera_model_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>379</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>focal_len_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>434</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_size_x_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_size_y_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spectral_characteristics_photo_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>532</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>image_format_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>camera_model_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>focal_len_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>447</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_size_y_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>990</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spectral_characteristics_photo_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1000</x>
+     <y>551</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>image_format_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1000</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>frame_size_x_3</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>990</x>
+     <y>316</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>473</y>
     </hint>
    </hints>
   </connection>
