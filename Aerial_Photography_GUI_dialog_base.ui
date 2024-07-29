@@ -6,377 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1035</width>
-    <height>962</height>
+    <width>1062</width>
+    <height>956</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1062</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QFrame" name="object">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>1001</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_name_object">
-      <property name="text">
-       <string>Название или шифр объекта съёмки</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QLineEdit" name="type_shoot"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_overlap_longitudinal">
-      <property name="text">
-       <string>Продольное перекрытие, %</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="name_object">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="4">
-     <widget class="QLineEdit" name="length_afs"/>
-    </item>
-    <item row="7" column="3">
-     <widget class="QLabel" name="label_overlap_transverse">
-      <property name="text">
-       <string>Поперечное перекрытие, %</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="QLineEdit" name="area_afs"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_nature_area">
-      <property name="text">
-       <string>Характер местности</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0" colspan="4">
-     <widget class="QLabel" name="label_length_afs">
-      <property name="text">
-       <string>Фактическая протяжность АФС, км, для АФС линейного объекта</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QLabel" name="label_customer">
-      <property name="text">
-       <string>Заказчик</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLineEdit" name="overlap_longitudinal"/>
-    </item>
-    <item row="4" column="0" colspan="4">
-     <widget class="QLabel" name="label_area_afs">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Фактическая площадь АФС, км&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;, для АФС объекта площадного характера&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="QLineEdit" name="customer">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <spacer name="horizontalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="2" column="1">
-     <widget class="QDateEdit" name="date_start">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QLabel" name="label_filming_location">
-      <property name="text">
-       <string>Съёмочный участок</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="4">
-     <widget class="QLineEdit" name="overlap_transverse"/>
-    </item>
-    <item row="3" column="1">
-     <widget class="QComboBox" name="nature_area">
-      <item>
-       <property name="text">
-        <string>Застроенная</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Не застроенная</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="QLineEdit" name="filming_location">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0" colspan="4">
-     <widget class="QLabel" name="label_orientation_route">
-      <property name="text">
-       <string>Ориентация маршрутов (широтная, меридиональная, заданная)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QLabel" name="label_type_shoot">
-      <property name="text">
-       <string>Вид съёмки</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QComboBox" name="executor">
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Котелевский К. А.</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Ли В. Ю.</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_date_start">
-      <property name="text">
-       <string>Дата начала АФС</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_executor">
-      <property name="text">
-       <string>Исполнитель АФС</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QLabel" name="label_date_end">
-      <property name="text">
-       <string>Дата окончания АФС</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4">
-     <widget class="QDateEdit" name="date_end"/>
-    </item>
-    <item row="6" column="4">
-     <widget class="QComboBox" name="orientation_route">
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Широтная</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Меридиональная</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Заданная</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>770</y>
-     <width>1001</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_add_information">
-      <property name="text">
-       <string>Дополнительные сведения по требованию ТЗ</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTextEdit" name="text_add_information"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="equipment">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>600</y>
-     <width>1001</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="3">
-     <widget class="QLabel" name="label_lidar_sn">
-      <property name="text">
-       <string>Лидар, серийный номер</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2" colspan="3">
-     <widget class="QLineEdit" name="definition_block"/>
-    </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QLabel" name="label_aircraft">
-      <property name="text">
-       <string>Воздушное судно</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2" colspan="3">
-     <widget class="QLineEdit" name="other_equipment">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2" colspan="3">
-     <widget class="QLineEdit" name="aircraft">
-      <property name="text">
-       <string>Геоскан 201 Агрогеодезия</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <widget class="QLineEdit" name="lidar_sn">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="label_receiver">
-      <property name="text">
-       <string>ГНСС-приёмник, тип, модель</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lidar_type">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_lidar_type">
-      <property name="text">
-       <string>Лидар (тип)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QLabel" name="label_definition_block">
-      <property name="text">
-       <string>Блок определения положения и ориентации, тип, модель, состав</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_other_equipment">
-      <property name="text">
-       <string>Прочая аппаратура</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2" colspan="3">
-     <widget class="QLineEdit" name="receiver">
-      <property name="text">
-       <string>Topcon OEM</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="save">
    <property name="geometry">
     <rect>
@@ -387,7 +29,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Сохранить</string>
+    <string>Выгрузить форму</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_passport_afs">
@@ -403,270 +45,6 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Паспорт аэрофотосъёмки&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QFrame" name="camera_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>340</y>
-     <width>1001</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_5">
-    <item row="6" column="4">
-     <widget class="QLabel" name="label_api_sn_3">
-      <property name="text">
-       <string>Серийный номер аэрофотоустановки (гироплатформы)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="QLabel" name="label_camera_sn_3">
-      <property name="text">
-       <string>Серийный номер аэрофотокамеры</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QLabel" name="label_focal_len_3">
-      <property name="text">
-       <string>Фокусное расстояние аэрофотокамеры, мм</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QLabel" name="label_long_shift_3">
-      <property name="text">
-       <string>Наличие и тип компенсации продольного сдвига изображения</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QLabel" name="label_type_lens_3">
-      <property name="text">
-       <string>Тип и серийный номер объектива (если объектив заменяемый)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QLineEdit" name="focal_len_3">
-      <property name="text">
-       <string>20</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="5">
-     <widget class="QLineEdit" name="image_format_3">
-      <property name="text">
-       <string>ARW</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QLineEdit" name="pixel_size_3"/>
-    </item>
-    <item row="0" column="5">
-     <widget class="QLineEdit" name="resolution_3"/>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="height_3"/>
-    </item>
-    <item row="7" column="4">
-     <widget class="QLabel" name="label_spectral_characteristics_photo_3">
-      <property name="text">
-       <string>Спектральная характеристика аэрофотоснимков</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="5">
-     <widget class="QLineEdit" name="type_lens_3">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QLineEdit" name="frame_size_x_3">
-      <property name="text">
-       <string>6000</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_camera_model_3">
-      <property name="text">
-       <string>Модель аэрофотокамеры</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="5">
-     <widget class="QLineEdit" name="frame_size_y_3">
-      <property name="text">
-       <string>4000</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4" colspan="2">
-     <widget class="QLineEdit" name="long_shift_3">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_api_type_3">
-      <property name="text">
-       <string>Тип аэрофотоустановки (гироплатформы)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="5">
-     <widget class="QLineEdit" name="coordinate_orientation_3"/>
-    </item>
-    <item row="0" column="4">
-     <widget class="QLabel" name="label_resolution_3">
-      <property name="text">
-       <string>Номинальное пространственное разрешение, м</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="QLabel" name="label_frame_size_y_3">
-      <property name="text">
-       <string>Размер кадра N(y) пикс</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLineEdit" name="camera_model_3">
-      <property name="text">
-       <string>Sony A6000</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <spacer name="horizontalSpacer_5">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="6" column="2">
-     <widget class="QLineEdit" name="api_type_3">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="4">
-     <widget class="QLabel" name="label_coordinate_orientation_3">
-      <property name="text">
-       <string>Ориентация системы координат снимка</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_frame_size_x_3">
-      <property name="text">
-       <string>Размер кадра N(x) пикс</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_pixel_size_3">
-      <property name="text">
-       <string>Физический размер пикселя, мм</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="5">
-     <widget class="QLineEdit" name="spectral_characteristics_photo_3">
-      <property name="text">
-       <string>NIR</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="4">
-     <widget class="QLabel" name="label_image_format_3">
-      <property name="text">
-       <string>Формат представления цифрового изображения</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="5">
-     <widget class="QLineEdit" name="api_sn_3">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QLineEdit" name="camera_sn_3">
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_height_3">
-      <property name="text">
-       <string>Высота фотографирования, м</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QFrame" name="frame_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>290</y>
-     <width>991</width>
-     <height>37</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Выбор камеры</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="text">
-       <string>Sony RX1RM2</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_2">
-      <property name="text">
-       <string>Sony A6000</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="clear">
    <property name="geometry">
     <rect>
@@ -677,8 +55,651 @@
     </rect>
    </property>
    <property name="text">
-    <string>Очистить форму</string>
+    <string>Очистить поля</string>
    </property>
+  </widget>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>1041</width>
+     <height>881</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QFrame" name="equipment">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>580</y>
+      <width>1001</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="3" column="2" colspan="3">
+      <widget class="QLineEdit" name="other_equipment">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lidar_type">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_lidar_type">
+       <property name="text">
+        <string>Лидар (тип)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" colspan="3">
+      <widget class="QLineEdit" name="definition_block"/>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLineEdit" name="lidar_sn">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_other_equipment">
+       <property name="text">
+        <string>Прочая аппаратура</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QLabel" name="label_definition_block">
+       <property name="text">
+        <string>Блок определения положения и ориентации, тип, модель, состав</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_receiver">
+       <property name="text">
+        <string>ГНСС-приёмник, тип, модель</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2" colspan="3">
+      <widget class="QLineEdit" name="receiver">
+       <property name="text">
+        <string>Topcon OEM</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_lidar_sn">
+       <property name="text">
+        <string>Лидар, серийный номер</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QLabel" name="label_aircraft">
+       <property name="text">
+        <string>Воздушное судно</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2" colspan="3">
+      <widget class="QLineEdit" name="aircraft">
+       <property name="text">
+        <string>Геоскан 201 Агрогеодезия</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_add_information_2">
+       <property name="text">
+        <string>Дополнительные сведения по требованию ТЗ</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2" colspan="3">
+      <widget class="QLineEdit" name="aircraft_2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="camera_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>1001</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="6" column="4">
+      <widget class="QLabel" name="label_api_sn_3">
+       <property name="text">
+        <string>Серийный номер аэрофотоустановки (гироплатформы)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="label_camera_sn_3">
+       <property name="text">
+        <string>Серийный номер аэрофотокамеры</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_focal_len_3">
+       <property name="text">
+        <string>Фокусное расстояние аэрофотокамеры, мм</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="3">
+      <widget class="QLabel" name="label_long_shift_3">
+       <property name="text">
+        <string>Наличие и тип компенсации продольного сдвига изображения</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QLabel" name="label_type_lens_3">
+       <property name="text">
+        <string>Тип и серийный номер объектива (если объектив заменяемый)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="focal_len_3">
+       <property name="text">
+        <string>20</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="5">
+      <widget class="QLineEdit" name="image_format_3">
+       <property name="text">
+        <string>ARW</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QLineEdit" name="pixel_size_3"/>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLineEdit" name="resolution_3"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="height_3"/>
+     </item>
+     <item row="7" column="4">
+      <widget class="QLabel" name="label_spectral_characteristics_photo_3">
+       <property name="text">
+        <string>Спектральная характеристика аэрофотоснимков</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="5">
+      <widget class="QLineEdit" name="type_lens_3">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="frame_size_x_3">
+       <property name="text">
+        <string>6000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_camera_model_3">
+       <property name="text">
+        <string>Модель аэрофотокамеры</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="5">
+      <widget class="QLineEdit" name="frame_size_y_3">
+       <property name="text">
+        <string>4000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4" colspan="2">
+      <widget class="QLineEdit" name="long_shift_3">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_api_type_3">
+       <property name="text">
+        <string>Тип аэрофотоустановки (гироплатформы)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="5">
+      <widget class="QLineEdit" name="coordinate_orientation_3"/>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="label_resolution_3">
+       <property name="text">
+        <string>Номинальное пространственное разрешение, м</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QLabel" name="label_frame_size_y_3">
+       <property name="text">
+        <string>Размер кадра N(y) пикс</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="camera_model_3">
+       <property name="text">
+        <string>Sony A6000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="6" column="2">
+      <widget class="QLineEdit" name="api_type_3">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="4">
+      <widget class="QLabel" name="label_coordinate_orientation_3">
+       <property name="text">
+        <string>Ориентация системы координат снимка</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_frame_size_x_3">
+       <property name="text">
+        <string>Размер кадра N(x) пикс</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_pixel_size_3">
+       <property name="text">
+        <string>Физический размер пикселя, мм</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="5">
+      <widget class="QLineEdit" name="spectral_characteristics_photo_3">
+       <property name="text">
+        <string>NIR</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="4">
+      <widget class="QLabel" name="label_image_format_3">
+       <property name="text">
+        <string>Формат представления цифрового изображения</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="5">
+      <widget class="QLineEdit" name="api_sn_3">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLineEdit" name="camera_sn_3">
+       <property name="text">
+        <string>Нет</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_height_3">
+       <property name="text">
+        <string>Высота фотографирования, м</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>991</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Выбор камеры</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton">
+       <property name="text">
+        <string>Sony RX1RM2</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="text">
+        <string>Sony A6000</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="object">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1001</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_name_object">
+       <property name="text">
+        <string>Название или шифр объекта съёмки</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QLineEdit" name="type_shoot"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_overlap_longitudinal">
+       <property name="text">
+        <string>Продольное перекрытие, %</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="name_object">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="4">
+      <widget class="QLineEdit" name="length_afs"/>
+     </item>
+     <item row="7" column="3">
+      <widget class="QLabel" name="label_overlap_transverse">
+       <property name="text">
+        <string>Поперечное перекрытие, %</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QLineEdit" name="area_afs"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_nature_area">
+       <property name="text">
+        <string>Характер местности</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="4">
+      <widget class="QLabel" name="label_length_afs">
+       <property name="text">
+        <string>Фактическая протяжность АФС, км, для АФС линейного объекта</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_customer">
+       <property name="text">
+        <string>Заказчик</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="overlap_longitudinal"/>
+     </item>
+     <item row="4" column="0" colspan="4">
+      <widget class="QLabel" name="label_area_afs">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Фактическая площадь АФС, км&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;, для АФС объекта площадного характера&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLineEdit" name="customer">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="1">
+      <widget class="QDateEdit" name="date_start">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_filming_location">
+       <property name="text">
+        <string>Съёмочный участок</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="4">
+      <widget class="QLineEdit" name="overlap_transverse"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="nature_area">
+       <item>
+        <property name="text">
+         <string>Застроенная</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Не застроенная</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLineEdit" name="filming_location">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="4">
+      <widget class="QLabel" name="label_orientation_route">
+       <property name="text">
+        <string>Ориентация маршрутов (широтная, меридиональная, заданная)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLabel" name="label_type_shoot">
+       <property name="text">
+        <string>Вид съёмки</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="executor">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Котелевский К. А.</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ли В. Ю.</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_date_start">
+       <property name="text">
+        <string>Дата начала АФС</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_executor">
+       <property name="text">
+        <string>Исполнитель АФС</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLabel" name="label_date_end">
+       <property name="text">
+        <string>Дата окончания АФС</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QDateEdit" name="date_end"/>
+     </item>
+     <item row="6" column="4">
+      <widget class="QComboBox" name="orientation_route">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Широтная</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Меридиональная</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Заданная</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QScrollBar" name="verticalScrollBar">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>20</y>
+      <width>20</width>
+      <height>851</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
@@ -694,8 +715,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>211</x>
-     <y>43</y>
+     <x>221</x>
+     <y>53</y>
     </hint>
    </hints>
   </connection>
@@ -710,8 +731,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>43</y>
+     <x>802</x>
+     <y>53</y>
     </hint>
    </hints>
   </connection>
@@ -726,8 +747,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>72</y>
+     <x>802</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -742,8 +763,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>130</y>
+     <x>802</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>
@@ -758,8 +779,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>159</y>
+     <x>802</x>
+     <y>169</y>
     </hint>
    </hints>
   </connection>
@@ -774,8 +795,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>188</y>
+     <x>802</x>
+     <y>198</y>
     </hint>
    </hints>
   </connection>
@@ -790,8 +811,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>792</x>
-     <y>246</y>
+     <x>802</x>
+     <y>256</y>
     </hint>
    </hints>
   </connection>
@@ -806,8 +827,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>211</x>
-     <y>246</y>
+     <x>221</x>
+     <y>256</y>
     </hint>
    </hints>
   </connection>
@@ -822,8 +843,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>247</x>
-     <y>350</y>
+     <x>257</x>
+     <y>360</y>
     </hint>
    </hints>
   </connection>
@@ -838,8 +859,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>350</y>
+     <x>872</x>
+     <y>360</y>
     </hint>
    </hints>
   </connection>
@@ -854,8 +875,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>480</y>
+     <x>872</x>
+     <y>490</y>
     </hint>
    </hints>
   </connection>
@@ -870,8 +891,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>247</x>
-     <y>480</y>
+     <x>257</x>
+     <y>490</y>
     </hint>
    </hints>
   </connection>
@@ -886,24 +907,8 @@
      <y>920</y>
     </hint>
     <hint type="destinationlabel">
-     <x>361</x>
-     <y>642</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clear</sender>
-   <signal>clicked()</signal>
-   <receiver>text_add_information</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>770</x>
-     <y>921</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>770</x>
-     <y>799</y>
+     <x>818</x>
+     <y>652</y>
     </hint>
    </hints>
   </connection>
@@ -914,12 +919,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>300</y>
+     <x>356</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>247</x>
-     <y>379</y>
+     <x>257</x>
+     <y>389</y>
     </hint>
    </hints>
   </connection>
@@ -930,12 +935,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>302</y>
+     <x>356</x>
+     <y>312</y>
     </hint>
     <hint type="destinationlabel">
-     <x>247</x>
-     <y>434</y>
+     <x>257</x>
+     <y>444</y>
     </hint>
    </hints>
   </connection>
@@ -946,12 +951,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>300</y>
+     <x>356</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>247</x>
-     <y>459</y>
+     <x>257</x>
+     <y>469</y>
     </hint>
    </hints>
   </connection>
@@ -962,12 +967,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>300</y>
+     <x>356</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>454</y>
+     <x>872</x>
+     <y>464</y>
     </hint>
    </hints>
   </connection>
@@ -978,12 +983,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>300</y>
+     <x>356</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>532</y>
+     <x>872</x>
+     <y>542</y>
     </hint>
    </hints>
   </connection>
@@ -994,12 +999,12 @@
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>300</y>
+     <x>356</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>558</y>
+     <x>872</x>
+     <y>568</y>
     </hint>
    </hints>
   </connection>
@@ -1096,6 +1101,22 @@
     <hint type="destinationlabel">
      <x>385</x>
      <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear</sender>
+   <signal>clicked()</signal>
+   <receiver>aircraft_2</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>770</x>
+     <y>926</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>760</y>
     </hint>
    </hints>
   </connection>
