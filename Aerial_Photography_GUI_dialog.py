@@ -32,7 +32,7 @@ FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'Aerial_Photography_GUI_dialog_base.ui'))
 
 
-class AerialPhotographyGUIDialog(QtWidgets.QDialog, FORM_CLASS):
+class AerialPhotographyGUIDialog(QtWidgets.QMainWindow, FORM_CLASS):
     def __init__(self, parent=None):
         """Constructor."""
         super(AerialPhotographyGUIDialog, self).__init__(parent)
