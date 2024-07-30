@@ -380,12 +380,12 @@ class Ui_AerialPhotographyGUIDialogBase(object):
         self.radioButton_5.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
         self.radioButton_5.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
         self.radioButton_5.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo("Sony A6000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo("20")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo("6000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo("4000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo("NIR")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo("ARW")) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(AerialPhotographyGUIDialogBase)
 
     def retranslateUi(self, AerialPhotographyGUIDialogBase):
