@@ -29,7 +29,7 @@ from qgis.PyQt import QtWidgets
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'Aerial_Photography_GUI_dialog_base.py'))
+    os.path.dirname(__file__), 'Aerial_Photography_GUI_dialog_base.ui'))
 
 
 class AerialPhotographyGUIDialog(QtWidgets.QMainWindow, FORM_CLASS):
