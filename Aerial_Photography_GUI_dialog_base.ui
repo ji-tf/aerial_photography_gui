@@ -751,6 +751,46 @@
       </rect>
      </property>
     </widget>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>971</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Дата аэрофотосъёмки</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Номер маршрута</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Новый столбец</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Курс</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Номера концевых аэрофотоснимков</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Замечания</string>
+      </property>
+     </column>
+    </widget>
    </widget>
   </widget>
  </widget>
