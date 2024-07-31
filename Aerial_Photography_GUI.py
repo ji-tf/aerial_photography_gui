@@ -198,3 +198,15 @@ class AerialPhotographyGUI:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
+
+
+    def radio_button_clicked():
+        pass
+
+
+    def analysis_txt():
+        pass
+
+
+    def analisis_kml():
+        pass

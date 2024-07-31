@@ -42,20 +42,3 @@ class AerialPhotographyGUIDialog(QtWidgets.QMainWindow, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
-
-        self.button_choise_txt.clicked.connect(self.file_afs_txt.redo) # type: ignore
-        self.button_choise_kml.clicked.connect(self.file_kml_txt.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(lambda:self.camera_model_5.redo("1111")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.focal_len_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_x_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
-
-        
