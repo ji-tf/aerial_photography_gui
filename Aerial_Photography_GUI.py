@@ -208,7 +208,20 @@ class AerialPhotographyGUI:
 
 
     def chang_camera(self):
-        pass
+        """"Переключение камеры в полях"""
+        self.retranslateUi(AerialPhotographyGUIDialogBase)
+        self.radioButton_5.clicked['bool'].connect(self.camera_model_5.redo("Sony RX 1RM2")) # type: ignore
+        self.radioButton_5.clicked['bool'].connect(self.focal_len_5.redo("")) # type: ignore
+        self.radioButton_5.clicked['bool'].connect(self.frame_size_x_5.redo("")) # type: ignore
+        self.radioButton_5.clicked['bool'].connect(self.frame_size_y_5.redo("")) # type: ignore
+        self.radioButton_5.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo("")) # type: ignore
+        self.radioButton_5.clicked['bool'].connect(self.image_format_5.redo("")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo("Sony A6000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo("20")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo("6000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo("4000")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo("NIR")) # type: ignore
+        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo("ARW"))
 
 
     def analysis_txt(self):
