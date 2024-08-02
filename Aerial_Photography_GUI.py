@@ -29,9 +29,9 @@ from qgis.PyQt.QtWidgets import QAction
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
-from datetime import datetime
-import pandas as pd
-
+#from datetime import datetime
+#import pandas as pd
+import os.path
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
@@ -199,108 +199,3 @@ class AerialPhotographyGUI:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
-
-
-    def radio_button_clicked(self):
-        pass
-
-
-    def analysis_txt(self, file_txt):
-        with open('file_txt', 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            # Выясняем сколько всего строк
-            num_lines = len(lines)
-
-        # Создание необходимых списков
-        list_file_number = [] # Все номера снимков
-        list_yaw = [] # Все значения yaw
-        list_number_m = [] # Номера маршрутов
-        list_number_end = [] # Номера концевых снимков
-        list_average = []  # Новый список для средних значений
-        course = [] # Курс
-        course_gms = [] # Курс в формате(градусы, минуты, секунды)
-        side = [] # Стороны
-
-        for i in range(6, num_lines, 1):
-            string = lines[i].split()
-            file_number = string[0]
-            yaw = string[6]
-
-            # Приводим дату к привычному виду
-            date_str = string[7]
-            date_obj = datetime.strptime(date_str, "%Y.%m.%d")
-            new_date_str = date_obj.strftime("%d.%m.%Y")
-
-            yaw_new = float(yaw)
-            list_file_number.append(file_number[-7:-4])
-            list_yaw.append(yaw_new)
-
-        # Создаём списки (номера концевых аэрофотоснимков, номера маршрутов)
-        num = 0
-        for i in range(1, len(list_yaw)):
-            if list_yaw[i] * list_yaw[i - 1] < 0:
-                num += 1
-                list_number_end.append(list_file_number[i - 1])
-                list_number_m.append(num)
-
-        # Индекс первого изменения знака
-        sign_change_index = -1
-        for i in range(1, len(list_yaw)):
-            if list_yaw[i] * list_yaw[i - 1] < 0:
-                sign_change_index = i
-                break
-
-        # Вычисляем среднее значение от нулевого элемента до первого изменения знака
-        if sign_change_index > 0:
-            average = sum(list_yaw[:sign_change_index]) / sign_change_index
-            list_average.append(average)
-
-        # Вычисляем средние значения для оставшихся частей списка
-        for i in range(sign_change_index + 1, len(list_yaw)):
-            if list_yaw[i] * list_yaw[i - 1] < 0:
-                # Вычисляем среднее значение от предыдущего изменения знака до текущего
-                average = sum(list_yaw[sign_change_index:i]) / (i - sign_change_index)
-                #print(list_yaw[sign_change_index:i])
-                list_average.append(average)
-                sign_change_index = i
-
-        # Добавляем последнее среднее значение
-        average = sum(list_yaw[sign_change_index:]) / (len(list_yaw) - sign_change_index)
-        list_average.append(average)
-
-        # Добавляем последние значения в списки (номера концевых аэрофотоснимков, номера маршрутов)
-        list_number_end.append(list_file_number[-1])
-        list_number_m.append(num + 1)
-
-        # Курс
-        for i, list_average in enumerate(list_average):
-            if list_average<0:
-                side.append("W")
-                num_yaw = round((list_average + 180), 4)
-                course.append(num_yaw)
-            else:
-                side.append("E")
-                course.append(round(list_average, 4))
-
-        for i, course in enumerate(course):
-            num_yaw = course
-            int_num_yaw = round(num_yaw//1)
-            minute = (num_yaw - int_num_yaw) * 60
-            int_min = round(minute//1)
-            second = (minute - int_min) *60
-            int_sec = round(second)
-            course_gms.append(f"{side[i]}{int_num_yaw}{"\u00B0"}{int_min}{"'"}{int_sec}{'"'}")
-
-        #data = [[new_date_str], [list_number_m], [course_gms], [list_number_end]]
-        df = pd.DataFrame({'Дата аэрофотосъёмки': new_date_str,
-                        'Номер маршрута': list_number_m,
-                            'Курс': course_gms,
-                            'Номера концевых аэрофотоснимков': list_number_end
-                            })
-
-        #print(df)
-        df.to_html('test.html', index=False)
-
-
-    def analisis_kml(self):
-        self.button_choise_kml.clicked.connect(self.file_kml_txt.redo) # type: ignore
