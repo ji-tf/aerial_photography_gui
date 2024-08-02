@@ -209,19 +209,22 @@ class AerialPhotographyGUI:
 
     def chang_camera(self):
         """"Переключение камеры в полях"""
-        self.retranslateUi(AerialPhotographyGUIDialogBase)
-        self.radioButton_5.clicked['bool'].connect(self.camera_model_5.redo("Sony RX 1RM2")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.focal_len_5.redo("")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_x_5.redo("")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_y_5.redo("")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo("")) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.image_format_5.redo("")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo("Sony A6000")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo("20")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo("6000")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo("4000")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo("NIR")) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo("ARW"))
+        
+        def camera_model_3_redo():
+            self.camera_model_3.setText('Sony RX1RM2')
+            self.focal_len_3.setText('35')
+            self.frame_size_x_3.setText('7952')
+            self.frame_size_y_3.setText('5304')
+            self.spectral_characteristics_photo_3.setText('RGB')
+            self.image_format_3.setText('JPEG')
+
+        def camera_model_3_redo2():
+            self.camera_model_3.setText('Sony A6000')
+            self.focal_len_3.setText('20')
+            self.frame_size_x_3.setText('6000')
+            self.frame_size_y_3.setText('4000')
+            self.spectral_characteristics_photo_3.setText('NIR')
+            self.image_format_3.setText('ARW')
 
 
     def analysis_txt(self):
