@@ -29,8 +29,9 @@ from qgis.PyQt.QtWidgets import QAction
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
+#from datetime import datetime
+#import pandas as pd
 import os.path
-
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
