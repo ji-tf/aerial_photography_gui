@@ -209,7 +209,8 @@ class AerialPhotographyGUI:
 
     #def chang_camera(self):
     #    """"Переключение камеры в полях"""
-
+    self.radioButton.clicked.connect(camera_model_3_redo) # type: ignore
+    self.radioButton_2.clicked.connect(camera_model_3_redo2) # type: ignore
     def camera_model_3_redo():
         self.camera_model_3.setText('Sony RX1RM2')
         self.focal_len_3.setText('35')
