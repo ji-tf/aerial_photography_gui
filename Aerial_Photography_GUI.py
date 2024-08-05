@@ -66,9 +66,16 @@ class AerialPhotographyGUI:
         self.actions = []
         self.menu = self.tr(u'&Aerial Photography GUI')
 
-        # Check if plugin was started the first time in current QGIS session
-        # Must be set in initGui() to survive plugin reloads
-        self.first_start = None
+        # TODO: We are going to let the user set this up in a future iteration
+        self.toolbar = self.iface.addToolBar(u'AerialPhotographyGUI')
+        self.toolbar.setObjectName(u'AerialPhotographyGUI')
+
+        print("** INITIALIZING AerialPhotographyGUI")
+
+        self.pluginIsActive = False
+        self.dockwidget = None
+        self.summary = {}
+        self.plugin_path = os.path.dirname(__file__)
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
