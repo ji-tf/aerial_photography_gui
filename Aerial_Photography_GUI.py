@@ -24,7 +24,7 @@
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
-
+from qgis.utils import iface
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
@@ -46,8 +46,10 @@ class AerialPhotographyGUI:
         """
         # Save reference to the QGIS interface
         self.iface = iface
+
         # initialize plugin directory
         self.plugin_dir = os.path.dirname(__file__)
+        
         # initialize locale
         locale = QSettings().value('locale/userLocale')[0:2]
         locale_path = os.path.join(
@@ -176,7 +178,29 @@ class AerialPhotographyGUI:
             #self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
         
         # will be set False in run()
-        self.first_start = True
+        #self.first_start = True
+        self.options_factory = OptionsFactory()
+
+        self.options_factory.setTitle(self.tr('Aerial Photography GUI'))
+
+        iface.registerOptionsWidgetFactory(self.options_factory)
+
+    
+    def onClosePlugin(self):
+        """Cleanup necessary items here when plugin dockwidget is closed"""
+
+        #print "** CLOSING CadasterImport"
+
+        # disconnects
+        self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
+
+        # remove this statement if dockwidget is to remain
+        # for reuse if plugin is reopened
+        # Commented next statement since it causes QGIS crashe
+        # when closing the docked window:
+        # self.dockwidget = None
+
+        self.pluginIsActive = False
 
 
     def unload(self):
@@ -186,6 +210,9 @@ class AerialPhotographyGUI:
                 self.tr(u'&Aerial Photography GUI'),
                 action)
             self.iface.removeToolBarIcon(action)
+        # remove the toolbar
+        del self.toolbar
+        iface.unregisterOptionsWidgetFactory(self.options_factory)
 
 
     def run(self):
@@ -193,36 +220,57 @@ class AerialPhotographyGUI:
 
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-        if self.first_start == True:
-            self.first_start = False
-            self.dlg = AerialPhotographyGUIDialog()
+        #if self.first_start == True:
+        #    self.first_start = False
+        #    self.dlg = AerialPhotographyGUIDialog()
 
         # show the dialog
-        self.dlg.show()
+        #self.dlg.show()
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        #result = self.dlg.exec_()
         # See if OK was pressed
-        if result:
+        #if result:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
-            pass
+        #    pass
+
+        if not self.pluginIsActive:
+            self.pluginIsActive = True
+
+            print("** STARTING AerialPhotographyGUI")
+
+            # dockwidget may not exist if:
+            #    first run of plugin
+            #    removed on close (see self.onClosePlugin method)
+            if self.dockwidget == None:
+                # Create the dockwidget (after translation) and keep reference
+                self.dockwidget = AerialPhotographyGUIDialog()
+
+            # connect to provide cleanup on closing of dockwidget
+            self.dockwidget.closingPlugin.connect(self.onClosePlugin)
+
+            # show the dockwidget
+            # TODO: fix to allow choice of dock location
+            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            self.dockwidget.show()
 
     
     def camera_model_5_redo(self):
-        self.camera_model_3.setText('Sony RX1RM2')
-        self.focal_len_3.setText('35')
-        self.frame_size_x_3.setText('7952')
-        self.frame_size_y_3.setText('5304')
-        self.spectral_characteristics_photo_3.setText('RGB')
-        self.image_format_3.setText('JPEG')
+
+        self.dockwidget.camera_model_3.setText('Sony RX1RM2')
+        self.dockwidget.focal_len_3.setText('35')
+        self.dockwidget.frame_size_x_3.setText('7952')
+        self.dockwidget.frame_size_y_3.setText('5304')
+        self.dockwidget.spectral_characteristics_photo_3.setText('RGB')
+        self.dockwidget.image_format_3.setText('JPEG')
 
     def camera_model_6_redo(self):
-        self.camera_model_3.setText('Sony A6000')
-        self.focal_len_3.setText('20')
-        self.frame_size_x_3.setText('6000')
-        self.frame_size_y_3.setText('4000')
-        self.spectral_characteristics_photo_3.setText('NIR')
-        self.image_format_3.setText('ARW')
+        self.dockwidget.camera_model_3.setText('Sony A6000')
+        self.dockwidget.focal_len_3.setText('20')
+        self.dockwidget.frame_size_x_3.setText('6000')
+        self.dockwidget.frame_size_y_3.setText('4000')
+        self.dockwidget.spectral_characteristics_photo_3.setText('NIR')
+        self.dockwidget.image_format_3.setText('ARW')
 
 
 #    def analysis_txt(self):
