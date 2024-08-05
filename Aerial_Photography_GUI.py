@@ -170,7 +170,8 @@ class AerialPhotographyGUI:
         if self.dockwidget == None:
             # Create the dockwidget (after translation) and keep reference
             self.dockwidget = AerialPhotographyGUIDialog()
-            #self.dockwidget.radioButton.clicked.connect(self.chang_camera)
+            self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
+            self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
             self.dockwidget.analysisTXTButton.clicked.connect(self.analysis_txt)
             self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
         
@@ -185,25 +186,6 @@ class AerialPhotographyGUI:
                 self.tr(u'&Aerial Photography GUI'),
                 action)
             self.iface.removeToolBarIcon(action)
-            #------
-            self.radioButton_5.clicked.connect(camera_model_5_redo) # type: ignore
-            self.radioButton_6.clicked.connect(camera_model_6_redo) # type: ignore
-
-            def camera_model_5_redo():
-                self.camera_model_3.setText('Sony RX1RM2')
-                self.focal_len_3.setText('35')
-                self.frame_size_x_3.setText('7952')
-                self.frame_size_y_3.setText('5304')
-                self.spectral_characteristics_photo_3.setText('RGB')
-                self.image_format_3.setText('JPEG')
-
-            def camera_model_6_redo2():
-                self.camera_model_3.setText('Sony A6000')
-                self.focal_len_3.setText('20')
-                self.frame_size_x_3.setText('6000')
-                self.frame_size_y_3.setText('4000')
-                self.spectral_characteristics_photo_3.setText('NIR')
-                self.image_format_3.setText('ARW')
 
 
     def run(self):
@@ -224,3 +206,31 @@ class AerialPhotographyGUI:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
+
+    
+    def camera_model_5_redo(self):
+        self.camera_model_3.setText('Sony RX1RM2')
+        self.focal_len_3.setText('35')
+        self.frame_size_x_3.setText('7952')
+        self.frame_size_y_3.setText('5304')
+        self.spectral_characteristics_photo_3.setText('RGB')
+        self.image_format_3.setText('JPEG')
+
+    def camera_model_6_redo2(self):
+        self.camera_model_3.setText('Sony A6000')
+        self.focal_len_3.setText('20')
+        self.frame_size_x_3.setText('6000')
+        self.frame_size_y_3.setText('4000')
+        self.spectral_characteristics_photo_3.setText('NIR')
+        self.image_format_3.setText('ARW')
+    
+    def chang_camera(self):
+        pass
+
+
+#    def analysis_txt(self):
+#        pass
+
+
+#    def save_file_tabl(self):
+#        pass
