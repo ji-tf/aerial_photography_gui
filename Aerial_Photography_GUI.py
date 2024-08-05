@@ -194,13 +194,13 @@ class AerialPhotographyGUI:
         #iface.registerOptionsWidgetFactory(self.options_factory)
 
     
-    def onClosePlugin(self):
-        """Cleanup necessary items here when plugin dockwidget is closed"""
+    #def onClosePlugin(self):
+        #"""Cleanup necessary items here when plugin dockwidget is closed"""
 
         #print "** CLOSING CadasterImport"
 
         # disconnects
-        self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
+        #self.dockwidget.closingPlugin.disconnect(self.onClosePlugin)
 
         # remove this statement if dockwidget is to remain
         # for reuse if plugin is reopened
@@ -208,7 +208,7 @@ class AerialPhotographyGUI:
         # when closing the docked window:
         # self.dockwidget = None
 
-        self.pluginIsActive = False
+        #self.pluginIsActive = False
 
 
     def unload(self):
@@ -255,7 +255,7 @@ class AerialPhotographyGUI:
                 self.dockwidget = AerialPhotographyGUIDialog()
 
             # connect to provide cleanup on closing of dockwidget
-            self.dockwidget.closingPlugin.connect(self.onClosePlugin)
+            #self.dockwidget.closingPlugin.connect(self.onClosePlugin)
 
             # show the dockwidget
             # TODO: fix to allow choice of dock location
