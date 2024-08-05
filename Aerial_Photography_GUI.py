@@ -172,8 +172,8 @@ class AerialPhotographyGUI:
             self.dockwidget = AerialPhotographyGUIDialog()
             self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
             self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
-            self.dockwidget.analysisTXTButton.clicked.connect(self.analysis_txt)
-            self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
+            #self.dockwidget.analysisTXTButton.clicked.connect(self.analysis_txt)
+            #self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
         
         # will be set False in run()
         self.first_start = True
@@ -223,9 +223,6 @@ class AerialPhotographyGUI:
         self.frame_size_y_3.setText('4000')
         self.spectral_characteristics_photo_3.setText('NIR')
         self.image_format_3.setText('ARW')
-    
-    def chang_camera(self):
-        pass
 
 
 #    def analysis_txt(self):
