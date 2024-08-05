@@ -216,7 +216,7 @@ class AerialPhotographyGUI:
         self.spectral_characteristics_photo_3.setText('RGB')
         self.image_format_3.setText('JPEG')
 
-    def camera_model_6_redo2(self):
+    def camera_model_6_redo(self):
         self.camera_model_3.setText('Sony A6000')
         self.focal_len_3.setText('20')
         self.frame_size_x_3.setText('6000')
