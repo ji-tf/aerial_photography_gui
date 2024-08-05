@@ -220,7 +220,7 @@ class AerialPhotographyGUI:
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
         del self.toolbar
-        iface.unregisterOptionsWidgetFactory(self.options_factory)
+        #iface.unregisterOptionsWidgetFactory(self.options_factory)
 
 
     def run(self):
@@ -259,7 +259,7 @@ class AerialPhotographyGUI:
 
             # show the dockwidget
             # TODO: fix to allow choice of dock location
-            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
+            #self.iface.addDockWidget(Qt.RightDockWidgetArea, self.dockwidget)
             self.dockwidget.show()
 
     
