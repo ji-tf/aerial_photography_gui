@@ -209,9 +209,10 @@ class AerialPhotographyGUI:
 
     #def chang_camera(self):
     #    """"Переключение камеры в полях"""
-    self.radioButton.clicked.connect(camera_model_3_redo) # type: ignore
-    self.radioButton_2.clicked.connect(camera_model_3_redo2) # type: ignore
-    def camera_model_3_redo():
+    self.radioButton_5.clicked.connect(camera_model_5_redo) # type: ignore
+    self.radioButton_6.clicked.connect(camera_model_6_redo) # type: ignore
+
+    def camera_model_5_redo():
         self.camera_model_3.setText('Sony RX1RM2')
         self.focal_len_3.setText('35')
         self.frame_size_x_3.setText('7952')
@@ -219,7 +220,7 @@ class AerialPhotographyGUI:
         self.spectral_characteristics_photo_3.setText('RGB')
         self.image_format_3.setText('JPEG')
 
-    def camera_model_3_redo2():
+    def camera_model_6_redo2():
         self.camera_model_3.setText('Sony A6000')
         self.focal_len_3.setText('20')
         self.frame_size_x_3.setText('6000')
