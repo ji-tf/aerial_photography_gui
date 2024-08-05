@@ -244,7 +244,7 @@ class AerialPhotographyGUI:
 
     def analysis_txt(self):
         file_widget = QgsFileWidget()
-        file_widget.setFilePath(self.dockwidget.lineEdit_2.text())
+        file_widget.setFilePath(self.dockwidget.button_choise_txt())
         file_path = file_widget.filePath()
 
         with open('file_path', 'r', encoding='utf-8') as f:
