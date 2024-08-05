@@ -32,6 +32,7 @@ from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
 from datetime import datetime
 import pandas as pd
 import os.path
+#from .options_factory import OptionsFactory
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
@@ -186,11 +187,11 @@ class AerialPhotographyGUI:
         
         # will be set False in run()
         #self.first_start = True
-        self.options_factory = OptionsFactory()
+        #self.options_factory = OptionsFactory()
 
-        self.options_factory.setTitle(self.tr('Aerial Photography GUI'))
+        #self.options_factory.setTitle(self.tr('Aerial Photography GUI'))
 
-        iface.registerOptionsWidgetFactory(self.options_factory)
+        #iface.registerOptionsWidgetFactory(self.options_factory)
 
     
     def onClosePlugin(self):
