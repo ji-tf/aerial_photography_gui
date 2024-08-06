@@ -247,8 +247,8 @@ class AerialPhotographyGUI:
         file_path = self.dockwidget.button_choise_txt.filePath()
         file_widget = QgsFileWidget()
         file_widget.setFilePath(file_path)
-        filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
-        file_widget.setFilePath(filename)
+        #filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
+        #file_widget.setFilePath(filename)
 
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
