@@ -248,7 +248,7 @@ class AerialPhotographyGUI:
         file_widget.setFilePath(file_path)
         
 
-        with open('file_path', 'r', encoding='utf-8') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
             # Выясняем сколько всего строк
             num_lines = len(lines)
