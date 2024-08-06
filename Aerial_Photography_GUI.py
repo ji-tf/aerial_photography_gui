@@ -25,6 +25,7 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.gui import QgsFileWidget
+from qgis.PyQt.QtWidgets import QFileDialog
 from qgis.utils import iface
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -246,7 +247,8 @@ class AerialPhotographyGUI:
         file_path = self.dockwidget.button_choise_txt.filePath()
         file_widget = QgsFileWidget()
         file_widget.setFilePath(file_path)
-        
+        filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать картинку', '', filter='Картинка (*jpg *.png *.jpeg)')
+        file_widget.setFilePath(filename)
 
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
