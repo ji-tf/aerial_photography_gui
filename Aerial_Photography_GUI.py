@@ -418,4 +418,4 @@ class AerialPhotographyGUI:
         }
 
         df = pd.DataFrame(data)
-        df.to_csv('test.csv', mode='a', header=False, index=False)
+        df.to_csv('E:/project/test.csv', mode='a', header=False, index=False)
