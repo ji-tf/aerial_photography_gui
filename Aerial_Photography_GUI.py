@@ -245,9 +245,9 @@ class AerialPhotographyGUI:
     def analysis_txt(self):
         file_widget = QgsFileWidget()
         file_widget.setFilePath(self.dockwidget.button_choise_txt)
-        #file_path = file_widget.filePath()
+        file_path = file_widget.filePath()
 
-        with open('E:/project/111.txt', 'r', encoding='utf-8') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
             # Выясняем сколько всего строк
             num_lines = len(lines)
