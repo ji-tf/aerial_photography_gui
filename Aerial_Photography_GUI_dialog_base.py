@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_AerialPhotographyGUIDialogBase(object):
     def setupUi(self, AerialPhotographyGUIDialogBase):
         AerialPhotographyGUIDialogBase.setObjectName("AerialPhotographyGUIDialogBase")
-        AerialPhotographyGUIDialogBase.resize(1038, 630)
+        AerialPhotographyGUIDialogBase.resize(1038, 600)
         self.centralwidget = QtWidgets.QWidget(AerialPhotographyGUIDialogBase)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_12 = QtWidgets.QGridLayout(self.centralwidget)
@@ -27,7 +27,7 @@ class Ui_AerialPhotographyGUIDialogBase(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1001, 841))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -153, 1001, 841))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -366,18 +366,6 @@ class Ui_AerialPhotographyGUIDialogBase(object):
         self.clear.clicked.connect(self.coordinate_orientation_5.clear) # type: ignore
         self.clear.clicked.connect(self.definition_block_3.clear) # type: ignore
         self.clear.clicked.connect(self.add_information.clear) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.camera_model_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.focal_len_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_x_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
-        self.radioButton_5.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.camera_model_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.focal_len_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_x_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.frame_size_y_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.spectral_characteristics_photo_5.redo) # type: ignore
-        self.radioButton_6.clicked['bool'].connect(self.image_format_5.redo) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(AerialPhotographyGUIDialogBase)
 
     def retranslateUi(self, AerialPhotographyGUIDialogBase):
