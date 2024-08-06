@@ -253,7 +253,7 @@ class AerialPhotographyGUI:
             # Выясняем сколько всего строк
             num_lines = len(lines)
 
-        # Создание необходимых списков
+        # Создание необходимых списко
         list_file_number = [] # Все номера снимков
         list_yaw = [] # Все значения yaw
         list_number_m = [] # Номера маршрутов
