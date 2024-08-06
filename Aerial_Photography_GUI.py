@@ -184,7 +184,7 @@ class AerialPhotographyGUI:
             self.dockwidget = AerialPhotographyGUIDialog()
             self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
             self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
-            self.dockwidget.button_choise_txt.clicked.connect(self.analysis_txt)
+            self.dockwidget.button_analysis_txt.clicked.connect(self.analysis_txt)
             #self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
         
 
