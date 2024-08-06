@@ -184,7 +184,7 @@ class AerialPhotographyGUI:
             self.dockwidget = AerialPhotographyGUIDialog()
             self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
             self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
-            self.dockwidget.button_analysis_txt.clicked.connect(self.analysis_txt)
+            self.dockwidget.button_choise_txt.clicked.connect(self.analysis_txt)
             #self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
         
 
@@ -247,16 +247,8 @@ class AerialPhotographyGUI:
         file_path = self.dockwidget.button_choise_txt.filePath()
         file_widget = QgsFileWidget()
         file_widget.setFilePath(file_path)
-
-        if file_path:
-            filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
-            file_widget.setFilePath(filename)
-
-        #file_path = self.dockwidget.button_choise_txt.filePath()
-        #file_widget = QgsFileWidget()
-        #file_widget.setFilePath(file_path)
-        #filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
-        #file_widget.setFilePath(filename)
+        filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
+        file_widget.setFilePath(filename)
 
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
