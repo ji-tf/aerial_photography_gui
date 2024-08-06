@@ -27,6 +27,7 @@ from qgis.PyQt.QtWidgets import QAction
 from qgis.gui import QgsFileWidget
 from qgis.PyQt.QtWidgets import QFileDialog
 from qgis.utils import iface
+from PyQt5.QtWidgets import QTextDocument
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
@@ -340,7 +341,22 @@ class AerialPhotographyGUI:
 
 
     def save_file_tabl(self):
-        name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
+        document = QTextDocument()
+        cursor = document.cursor()
+
+        cursor.insertText("Название или шифр объекта съёмки: ")
+        cursor.insertText(self.dockwidget.name_object.text())
+        cursor.insertText("\n")
+
+        cursor.insertText("Съёмочный участок: ")
+        cursor.insertText(self.dockwidget.filming_location.text())
+        cursor.insertText("\n")
+
+        # и т.д.
+
+        document.save("E:/project/file.txt")
+
+        '''name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
         filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
         executor = self.dockwidget.executor.currentText() # Исполнитель
         customer = self.dockwidget.customer.text() # Заказчик
@@ -418,4 +434,4 @@ class AerialPhotographyGUI:
         }
 
         df = pd.DataFrame(data)
-        df.to_html('E:/project/test.html', mode='a', header=False, index=False)
+        df.to_html('E:/project/test.html', mode='a', header=False, index=False)'''
