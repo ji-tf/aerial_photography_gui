@@ -413,9 +413,9 @@ class AerialPhotographyGUI:
             'Блок определения положения и ориентации, тип, модель, состав':[definition_block],
             'ГНСС-приёмник, тип, модель':[receiver],
             'Прочая аппаратура':[other_equipment],
-            'Воздушное судно':[aircraft]
+            'Воздушное судно':[aircraft],
             'Дополнительные сведения по требованию ТЗ':[add_information]
         }
 
         df = pd.DataFrame(data)
-        df.to_csv('E:/project/test.csv', mode='a', header=False, index=False)
+        df.to_html('E:/project/test.html', mode='a', header=False, index=False)
