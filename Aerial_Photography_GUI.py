@@ -227,21 +227,21 @@ class AerialPhotographyGUI:
     
     def camera_model_5_redo(self):
 
-        self.dockwidget.camera_model_5.setText('Sony RX1RM2')
-        self.dockwidget.focal_len_5.setText('35')
-        self.dockwidget.frame_size_x_5.setText('7952')
-        self.dockwidget.frame_size_y_5.setText('5304')
-        self.dockwidget.spectral_characteristics_photo_5.setText('RGB')
-        self.dockwidget.image_format_5.setText('JPEG')
+        self.dockwidget.camera_model.setText('Sony RX1RM2')
+        self.dockwidget.focal_len.setText('35')
+        self.dockwidget.frame_size_x.setText('7952')
+        self.dockwidget.frame_size_y.setText('5304')
+        self.dockwidget.spectral_characteristics_photo.setText('RGB')
+        self.dockwidget.image_format.setText('JPEG')
 
     def camera_model_6_redo(self):
 
-        self.dockwidget.camera_model_5.setText('Sony A6000')
-        self.dockwidget.focal_len_5.setText('20')
-        self.dockwidget.frame_size_x_5.setText('6000')
-        self.dockwidget.frame_size_y_5.setText('4000')
-        self.dockwidget.spectral_characteristics_photo_5.setText('NIR')
-        self.dockwidget.image_format_5.setText('ARW')
+        self.dockwidget.camera_model.setText('Sony A6000')
+        self.dockwidget.focal_len.setText('20')
+        self.dockwidget.frame_size_x.setText('6000')
+        self.dockwidget.frame_size_y.setText('4000')
+        self.dockwidget.spectral_characteristics_photo.setText('NIR')
+        self.dockwidget.image_format.setText('ARW')
 
 
     def analysis_txt(self):
