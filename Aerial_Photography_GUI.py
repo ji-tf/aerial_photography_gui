@@ -187,7 +187,7 @@ class AerialPhotographyGUI:
             self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
             self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
             self.dockwidget.button_analysis_txt.clicked.connect(self.analysis_txt)
-            self.dockwidget.save.connect(self.save_file_tabl)
+            self.dockwidget.save.clicked.connect(self.save)
         
 
     def unload(self):
@@ -341,7 +341,7 @@ class AerialPhotographyGUI:
         df.to_html('E:/project/test.html', index=False)
 
 
-    def save_file_tabl(self):
+    def save(self):
         # Список полей
         fields = ['Название или шифр объекта съёмки', 'Съёмочный участок', 'Исполнитель', 'Заказчик', 'Дата начала АФС', 'Дата окончания АФС', 'Застроенная/Не застроенная', 'Вид съёмки', 'Фактическая площадь АФС, для АФС объекта площадного характера', 'Фактическая протяжность АФС, км, для АФС линейного объекта']
 
