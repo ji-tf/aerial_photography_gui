@@ -27,8 +27,8 @@ from qgis.PyQt.QtWidgets import QAction
 from qgis.gui import QgsFileWidget
 from qgis.PyQt.QtWidgets import QFileDialog
 from qgis.utils import iface
-#from PyQt5.QtWidgets import QTextDocument
-#from PyQt5.QtWidgets import QTextTable
+from PyQt5.QtWidgets import QTextDocument
+from PyQt5.QtWidgets import QTextTable
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
