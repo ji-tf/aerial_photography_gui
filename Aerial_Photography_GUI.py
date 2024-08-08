@@ -342,22 +342,81 @@ class AerialPhotographyGUI:
 
     def save(self):
         # Список полей
-        fields = ['Название или шифр объекта съёмки', 'Съёмочный участок', 'Заказчик', 'Вид съёмки', 'Фактическая площадь АФС, для АФС объекта площадного характера', 'Фактическая протяжность АФС, км, для АФС линейного объекта']
+        name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
+        filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
+        executor = self.dockwidget.executor.currentText() # Исполнитель
+        customer = self.dockwidget.customer.text() # Заказчик
+        date_start = self.dockwidget.date_start.text() # Дата начала АФС
+        date_end = self.dockwidget.date_end.text() # Дата окончания АФС
+        nature_area = self.dockwidget.nature_area.currentText() # (Не)Застроенная
+        type_shoot = self.dockwidget.type_shoot.text() # Вид съёмки
+        area_afs = self.dockwidget.area_afs.text() # Фактическая площадь АФС, для АФС объекта площадного характера
+        length_afs = self.dockwidget.length_afs.text() # Фактическая протяжность АФС, км, для АФС линейного объекта
+        orientation_route = self.dockwidget.orientation_route.currentText() # Ориентация маршрутов (широтная, меридиональная, заданная)
+        overlap_longitudinal = self.dockwidget.overlap_longitudinal.text() # Продольное перекрытие
+        overlap_transverse = self.dockwidget.overlap_transverse.text() # Поперечное перекрытие
+        height = self.dockwidget.height_3.text() # Высота фотографирования
+        resolution = self.dockwidget.resolution_3.text() # Номинальное пространственное разрешение, м
+        camera_model = self.dockwidget.camera_model_3.text() # Модель аэрофотокамеры
+        camera_sn = self.dockwidget.camera_sn_3.text() # Серийный номер аэрофотокамеры
+        long_shift = self.dockwidget.long_shift_3.text() # Наличие и тип компенсации продольного сдвига изображения
+        focal_len = self.dockwidget.focal_len_3.text() # Фокусное расстояние аэрофотокамеры, мм
+        type_lens = self.dockwidget.type_lens_3.text() # Тип и серийный номер объектива (если объектив заменяемый)
+        frame_size_x = self.dockwidget.frame_size_x_3.text() # Размер кадра N(x) пикс
+        frame_size_y = self.dockwidget.frame_size_y_3.text() # Размер кадра N(y) пикс
+        pixel_size = self.dockwidget.pixel_size_3.text() # Физический размер пикселя, мм
+        coordinate_orientation = self.dockwidget.coordinate_orientation_3.text() # Ориентация системы координат снимка
+        api_type = self.dockwidget.api_type_3.text() # Тип аэрофотоустановки (гироплатформы)
+        api_sn = self.dockwidget.api_sn_3.text() # Серийный номер аэрофотоустановки (гироплатформы)
+        spectral_characteristics_photo = self.dockwidget.spectral_characteristics_photo_3.text() # Спектральная характеристика аэрофотоснимков
+        image_format = self.dockwidget.image_format_3.text() # Формат представления цифрового изображения
+        lidar_type = self.dockwidget.lidar_type.text() # Лидар (тип)
+        lidar_sn = self.dockwidget.lidar_sn.text() # Лидар, серийный номер
+        definition_block = self.dockwidget.definition_block.text() # Блок определения положения и ориентации, тип, модель, состав
+        receiver = self.dockwidget.receiver.text() # ГНСС-приёмник, тип, модель
+        other_equipment = self.dockwidget.other_equipment.text() # Прочая аппаратура
+        aircraft = self.dockwidget.aircraft.text() # Воздушное судно"))
+        #add_information = self.text_add_information.setText() # Дополнительные сведения по требованию ТЗ
 
-        # Список значений
-        values = [self.dockwidget.name_object_4.text(), self.dockwidget.filming_location_4.text(), self.dockwidget.type_shoot_4.text(), self.dockwidget.area_afs_4.text(), self.dockwidget.length_afs_4.text()]
+        #list = [name_object, filming_location, executor, customer, date_start, date_end, nature_area, type_shoot, area_afs, length_afs, orientation_route, overlap_longitudinal,
+        #    overlap_transverse, height, resolution, camera_model, camera_sn, long_shift, focal_len, type_lens, frame_size_x, frame_size_y, pixel_size, coordinate_orientation, api_type,
+        #    api_sn, spectral_characteristics_photo, image_format, lidar_type, lidar_sn, definition_block, receiver, other_equipment, aircraft]
+        data = {
+            'Название или шифр объекта съёмки':[name_object],
+            'Съёмочный участок':[filming_location], 
+            'Исполнитель':[executor],
+            'Заказчик':[customer],
+            'Дата начала АФС':[date_start],
+            'Дата окончания АФС':[date_end],
+            'Застроенная/Не застроенная':[nature_area],
+            'Вид съёмки':[type_shoot],
+            'Фактическая площадь АФС, для АФС объекта площадного характера':[area_afs],
+            'Фактическая протяжность АФС, км, для АФС линейного объекта':[length_afs],
+            'Ориентация маршрутов':[orientation_route],
+            'Продольное перекрытие':[overlap_longitudinal],
+            'Поперечное перекрытие':[overlap_transverse],
+            'Высота фотографирования':[height],
+            'Номинальное пространственное разрешение, м':[resolution],
+            'Модель аэрофотокамеры':[camera_model],
+            'Серийный номер аэрофотокамеры':[camera_sn],
+            'Наличие и тип компенсации продольного сдвига изображения':[long_shift],
+            'Фокусное расстояние аэрофотокамеры, мм':[focal_len],
+            'Тип и серийный номер объектива (если объектив заменяемый)':[type_lens],
+            'Размер кадра N(x) пикс':[frame_size_x],
+            'Размер кадра N(y) пикс':[frame_size_y],
+            'Физический размер пикселя, мм':[pixel_size],
+            'Ориентация системы координат снимка':[coordinate_orientation],
+            'Тип аэрофотоустановки (гироплатформы)':[api_type],
+            'Серийный номер аэрофотоустановки (гироплатформы)':[api_sn],
+            'Спектральная характеристика аэрофотоснимков':[spectral_characteristics_photo], 
+            'Формат представления цифрового изображения':[image_format],
+            'Лидар (тип)':[lidar_type],
+            'Лидар, серийный номер':[lidar_sn],
+            'Блок определения положения и ориентации, тип, модель, состав':[definition_block],
+            'ГНСС-приёмник, тип, модель':[receiver],
+            'Прочая аппаратура':[other_equipment],
+            'Воздушное судно':[aircraft]
+        }
 
-        table = QTextTable()
-        table.setRowCount(len(fields))
-        table.setColumnCount(len(values))
-
-        for i in range(len(fields)):
-            for j in range(len(values)):
-                item = QTableWidgetItem(fields[i], values[j])
-                table.setItem(i, j, item)
-
-        document = QTextDocument()
-        cursor = document.cursor()
-        cursor.insertTable(table)
-
-        document.save("E:/project/file.txt")
+        df = pd.DataFrame(data)
+        df.to_csv('E:/project/file.csv', mode='a', header=False, index=False)
