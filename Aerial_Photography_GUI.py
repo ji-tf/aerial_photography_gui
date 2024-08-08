@@ -346,7 +346,7 @@ class AerialPhotographyGUI:
         fields = ['Название или шифр объекта съёмки', 'Съёмочный участок', 'Исполнитель', 'Заказчик', 'Дата начала АФС', 'Дата окончания АФС', 'Застроенная/Не застроенная', 'Вид съёмки', 'Фактическая площадь АФС, для АФС объекта площадного характера', 'Фактическая протяжность АФС, км, для АФС линейного объекта']
 
         # Список значений
-        values = [self.dockwidget.name_object_4.text(), self.dockwidget.filming_location_4.text(), self.dockwidget.executor_4.text(), self.dockwidget.customer_4.text(), self.dockwidget.date_start_4.text(), self.dockwidget.date_end_4.text(), self.dockwidget.nature_area_4.text(), self.dockwidget.type_shoot_4.text(), self.dockwidget.area_afs_4.text(), self.dockwidget.length_afs_4.text()]
+        values = [self.dockwidget.name_object_4.text(), self.dockwidget.filming_location_4.text(), str(self.dockwidget.executor_4.text()), self.dockwidget.customer_4.text(), self.dockwidget.date_start_4.text(), self.dockwidget.date_end_4.text(), self.dockwidget.nature_area_4.text(), self.dockwidget.type_shoot_4.text(), self.dockwidget.area_afs_4.text(), self.dockwidget.length_afs_4.text()]
 
         table = QTextTable()
         table.setRowCount(len(fields))
