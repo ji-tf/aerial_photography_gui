@@ -28,6 +28,7 @@ from qgis.gui import QgsFileWidget
 from qgis.PyQt.QtWidgets import QFileDialog
 from qgis.utils import iface
 from PyQt5.QtWidgets import QTextDocument
+from PyQt5.QtWidgets import QTextTable
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
@@ -341,4 +342,23 @@ class AerialPhotographyGUI:
 
 
     def save_file_tabl(self):
-        pass
+        # Список полей
+        fields = ['Название или шифр объекта съёмки', 'Съёмочный участок', 'Исполнитель', 'Заказчик', 'Дата начала АФС', 'Дата окончания АФС', 'Застроенная/Не застроенная', 'Вид съёмки', 'Фактическая площадь АФС, для АФС объекта площадного характера', 'Фактическая протяжность АФС, км, для АФС линейного объекта']
+
+        # Список значений
+        values = [self.dockwidget.name_object.text(), self.dockwidget.filming_location.text(), self.dockwidget.executor.text(), self.dockwidget.customer.text(), self.dockwidget.date_start.text(), self.dockwidget.date_end.text(), self.dockwidget.nature_area.text(), self.dockwidget.type_shoot.text(), self.dockwidget.area_afs.text(), self.dockwidget.length_afs.text()]
+
+        table = QTextTable()
+        table.setRowCount(len(fields))
+        table.setColumnCount(len(values))
+
+        for i in range(len(fields)):
+            for j in range(len(values)):
+                item = QTableWidgetItem(fields[i], values[j])
+                table.setItem(i, j, item)
+
+        document = QTextDocument()
+        cursor = document.cursor()
+        cursor.insertTable(table)
+
+        document.save("E:/project/file.txt")
