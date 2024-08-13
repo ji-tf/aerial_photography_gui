@@ -338,10 +338,27 @@ class AerialPhotographyGUI:
             'Замечания': ''}
         
         table = tabulate(data, tablefmt="fancy_grid",  headers='keys', stralign='center', numalign="center")
-        print(table)
+        #print(table)
+        name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
+        filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
+        add_information = self.dockwidget.text_add_information.setText() # Дополнительные сведения по требованию ТЗ
+        data2 = [
+            ('Название или шифр объекта\nсъёмки', name_object, 'Съёмочный участок', filming_location),
+            ('Дополнительные сведения по требованию ТЗ', add_information)]
+        table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
+
+        # Сохранение обеих таблиц в один HTML-файл
+        html = f"<html><head><style>table {{ border-collapse: collapse; }} th, td {{ border: 1px solid black; padding: 5px; }}</style></head><body><h1>Таблица 1</h1>{table}<br><h1>Таблица 2</h1>{table2}</body></html>"
+        file_name = 'aerial_photography.html'
+        file_path = os.path.join(QFileInfo(file_widget.filePath()).path(), file_name)
+        with open(file_path, 'w') as f:
+            f.write(html)
+
+        # Показать сообщение пользователю
+        QtWidgets.QMessageBox.information(None, "Сохранение данных", f"Данные успешно сохранены в файл {file_path}")
 
 
-    def save(self):
+'''    def save(self):
         # Список полей
         name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
         filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
@@ -408,4 +425,4 @@ class AerialPhotographyGUI:
             ('Дополнительные сведения по требованию ТЗ', '', '', add_information)]
 
         table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
-        print(table2)
+        print(table2)'''
