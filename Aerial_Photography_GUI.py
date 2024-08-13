@@ -358,7 +358,7 @@ class AerialPhotographyGUI:
         QtWidgets.QMessageBox.information(None, "Сохранение данных", f"Данные успешно сохранены в файл {file_path}")
 
 
-'''    def save(self):
+    def save(self):
         # Список полей
         name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
         filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
@@ -425,4 +425,4 @@ class AerialPhotographyGUI:
             ('Дополнительные сведения по требованию ТЗ', '', '', add_information)]
 
         table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
-        print(table2)'''
+        print(table2)
