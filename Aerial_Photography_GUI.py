@@ -32,8 +32,8 @@ from PyQt5.QtGui import QTextDocument, QTextTable,QTextTableFormat,QPixmap,QText
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
-from datetime import datetime
 from tabulate import tabulate
+from datetime import datetime
 import pandas as pd
 import os.path
 
