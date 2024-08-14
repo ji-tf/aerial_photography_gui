@@ -414,3 +414,4 @@ class AerialPhotographyGUI:
 
         #table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
         print(data2)
+        data2.to_html('E:/project/ttt.html', index=False)
