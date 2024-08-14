@@ -347,16 +347,6 @@ class AerialPhotographyGUI:
             ('Дополнительные сведения по требованию ТЗ', add_information)]
         table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
 
-        # Сохранение обеих таблиц в один HTML-файл
-        html = f"<html><head><style>table {{ border-collapse: collapse; }} th, td {{ border: 1px solid black; padding: 5px; }}</style></head><body><h1>Таблица 1</h1>{table}<br><h1>Таблица 2</h1>{table2}</body></html>"
-        file_name = 'aerial_photography.html'
-        file_path = os.path.join(QFileInfo(file_widget.filePath()).path(), file_name)
-        with open(file_path, 'w') as f:
-            f.write(html)
-
-        # Показать сообщение пользователю
-        QtWidgets.QMessageBox.information(None, "Сохранение данных", f"Данные успешно сохранены в файл {file_path}")
-
 
     def save(self):
         # Список полей
