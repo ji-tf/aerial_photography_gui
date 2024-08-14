@@ -25,14 +25,12 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.gui import QgsFileWidget
-#from qgis.PyQt.QtWidgets import QFileDialog
-#from qgis.utils import iface
-#from PyQt5.QtGui import QTextDocument, QTextTable,QTextTableFormat,QPixmap,QTextLength,QPixmap,QTextBlockFormat,QTextCharFormat,QPen,QTextFrameFormat
+from qgis.PyQt.QtWidgets import QFileDialog
+from qgis.utils import iface
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
-from tabulate import tabulate
 from datetime import datetime
 import pandas as pd
 import os.path
@@ -330,22 +328,22 @@ class AerialPhotographyGUI:
             int_sec = round(second)
             course_gms.append(f"{int_num_yaw}{"\u00B0"}{int_min}{"'"}{int_sec}{'"'}")
 
-        data = {'Дата\nаэрофотосъёмки': [new_date_str],
+        '''data = {'Дата\nаэрофотосъёмки': [new_date_str],
             'Номер\nмаршрута': list_number_m,
             'Курс': course_gms,
             'Номера концевых\nаэрофотоснимков': list_number_end,
             'Номера концевых\nаэрофотоснимков\nповторной АФС': '',
-            'Замечания': ''}
+            'Замечания': ''}'''
         
-        table = tabulate(data, tablefmt="fancy_grid",  headers='keys', stralign='center', numalign="center")
-        #print(table)
-        name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
-        filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
-        add_information = self.dockwidget.text_add_information.setText() # Дополнительные сведения по требованию ТЗ
-        data2 = [
-            ('Название или шифр объекта\nсъёмки', name_object, 'Съёмочный участок', filming_location),
-            ('Дополнительные сведения по требованию ТЗ', add_information)]
-        table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
+        #data = [[new_date_str], [list_number_m], [course_gms], [list_number_end]]
+        df = pd.DataFrame({'Дата аэрофотосъёмки': new_date_str,
+                        'Номер маршрута': list_number_m,
+                            'Курс': course_gms,
+                            'Номера концевых аэрофотоснимков': list_number_end
+                            })
+
+        print(df)
+        df.to_html('E:/project/test.html', index=False)
 
 
     def save(self):
@@ -414,5 +412,5 @@ class AerialPhotographyGUI:
             ('Воздушное судно', '', '', aircraft),
             ('Дополнительные сведения по требованию ТЗ', '', '', add_information)]
 
-        table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
-        print(table2)
+        #table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
+        print(data2)
