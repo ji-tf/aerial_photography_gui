@@ -382,7 +382,7 @@ class AerialPhotographyGUI:
         receiver = self.dockwidget.receiver.text() # ГНСС-приёмник, тип, модель
         other_equipment = self.dockwidget.other_equipment.text() # Прочая аппаратура
         aircraft = self.dockwidget.aircraft.text() # Воздушное судно"))
-        add_information = self.dockwidget.text_add_information.setText() # Дополнительные сведения по требованию ТЗ
+        add_information = self.dockwidget.add_information.setText() # Дополнительные сведения по требованию ТЗ
 
         #list = [name_object, filming_location, executor, customer, date_start, date_end, nature_area, type_shoot, area_afs, length_afs, orientation_route, overlap_longitudinal,
         #    overlap_transverse, height, resolution, camera_model, camera_sn, long_shift, focal_len, type_lens, frame_size_x, frame_size_y, pixel_size, coordinate_orientation, api_type,
