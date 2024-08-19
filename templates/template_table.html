@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Форма паспорта аэрофотосъёмки</title>
+  </head>
+  <body>
+    <table BORDER="1" cellspacing="0" style="max-width:1000px;">
+      <caption>
+        Форма паспорта аэрофотосъёмки
+      </caption>
+      <caption>
+        ПАСПОРТ АЭРОФОТОСЪЁМКИ
+      </caption>
+      <tr>
+        <td>Название или шифр объекта съёмки</td>
+        <td>{{ name_object }}</td>
+        <td>Съёмочный участок</td>
+        <td>{{ filming_location }}</td>
+      </tr>
+      <tr>
+        <td>Исполнитель АФС</td>
+        <td>{{ executor }}</td>
+        <td>Заказчик</td>
+        <td>{{ customer }}</td>
+      </tr>
+      <tr>
+        <td>Дата начала АФС</td>
+        <td>{{ date_start }}</td>
+        <td>Дата окончания АФС</td>
+        <td>{{ date_end }}</td>
+      </tr>
+      <tr>
+        <td>Характер местности</td>
+        <td>{{ nature_area }}</td>
+        <td>Вид съёмки</td>
+        <td>{{ type_shoot }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Фактическая площадь АФС, км^2, для АФС объекта площадного характера</td>
+        <td>{{ area_afs }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Фактическая протяжность АФС, км, для АФС линейного объекта</td>
+        <td>{{ length_afs }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Ориентация маршрутов (широтная, меридиональная, заданная)</td>
+        <td>{{ orientation_route }}</td>
+      </tr>
+      <tr>
+        <td>Продольное перекрытие, %</td>
+        <td>{{ overlap_longitudinal }}</td>
+        <td>Поперечное перекрытие, %</td>
+        <td>{{ overlap_transverse }}</td>
+      </tr>
+      <tr>
+        <td>Высота фотографирования, м</td>
+        <td>{{ height }}</td>
+        <td>Номинальное пространственное разрешение, ь</td>
+        <td>{{ resolution }}</td>
+      </tr>
+      <tr>
+        <td>Модель аэрофотокамеры</td>
+        <td>{{ camera_model }}</td>
+        <td>Серийный номер аэрофотокамеры</td>
+        <td>{{ camera_sn }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Наличие и тип компенсации продольного сдвига изображения</td>
+        <td>{{ long_shift }}</td>
+      </tr>
+      <tr>
+        <td>Фокусное расстояние аэрофотокамеры, мм</td>
+        <td>{{ focal_len }}</td>
+        <td>Тип и серийный номер объектива (если объектив съёмный, заменяемый)</td>
+        <td>{{ type_lens }}</td>
+      </tr>
+      <tr>
+        <td>Размер кадра N(x') пикс</td>
+        <td>{{ frame_size_x }}</td>
+        <td>Размер кадра N(y') пикс</td>
+        <td>{{ frame_size_y }}</td>
+      </tr>
+      <tr>
+        <td>'Физический размер пикселя, мм</td>
+        <td>{{ pixel_size }}</td>
+        <td>Ориентация системы координат снимка</td>
+        <td>{{ coordinate_orientation }}</td>
+      </tr>
+      <tr>
+        <td>Тип аэрофотоустановки (гироплатформы)</td>
+        <td>{{ api_type }}</td>
+        <td>Серийный номер аэрофотоустановки (гироплатформы)</td>
+        <td>{{ api_sn }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Спектральная характеристика аэрофотоснимков (RGB, PAN, прочее)</td>
+        <td>{{ spectral_characteristics_photo }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Формат представления цифрового изображения (TIFF, JPEG)</td>
+        <td>{{ image_format }}</td>
+      </tr>
+      <tr>
+        <td>Лидар (тип)</td>
+        <td>{{ lidar_type }}</td>
+        <td>Лидар, серийный номер</td>
+        <td>{{ lidar_sn }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Блок определения положения и ориентации, тип, модель, состав</td>
+        <td>{{ definition_block }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">ГНСС-приёмник, тип, модель</td>
+        <td>{{ receiver }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Прочая аппаратура</td>
+        <td>{{ other_equipment }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Воздушное судно</td>
+        <td>{{ aircraft }}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Дополнительные сведения по требованию ТЗ</td>
+        <td>{{ add_information }}</td>
+      </tr>
+    </table>
+</body>
+</html>
