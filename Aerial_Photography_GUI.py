@@ -31,6 +31,7 @@ from qgis.utils import iface
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
+from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import pandas as pd
 import os.path
@@ -327,13 +328,6 @@ class AerialPhotographyGUI:
             second = (minute - int_min) *60
             int_sec = round(second)
             course_gms.append(f"{int_num_yaw}{"\u00B0"}{int_min}{"'"}{int_sec}{'"'}")
-
-        '''data = {'Дата\nаэрофотосъёмки': [new_date_str],
-            'Номер\nмаршрута': list_number_m,
-            'Курс': course_gms,
-            'Номера концевых\nаэрофотоснимков': list_number_end,
-            'Номера концевых\nаэрофотоснимков\nповторной АФС': '',
-            'Замечания': ''}'''
         
         #data = [[new_date_str], [list_number_m], [course_gms], [list_number_end]]
         df = pd.DataFrame({'Дата аэрофотосъёмки': new_date_str,
@@ -387,31 +381,29 @@ class AerialPhotographyGUI:
         #list = [name_object, filming_location, executor, customer, date_start, date_end, nature_area, type_shoot, area_afs, length_afs, orientation_route, overlap_longitudinal,
         #    overlap_transverse, height, resolution, camera_model, camera_sn, long_shift, focal_len, type_lens, frame_size_x, frame_size_y, pixel_size, coordinate_orientation, api_type,
         #    api_sn, spectral_characteristics_photo, image_format, lidar_type, lidar_sn, definition_block, receiver, other_equipment, aircraft]
-        data2 = [
-            ('Название или шифр объекта\nсъёмки', name_object, 'Съёмочный участок', filming_location),
-            ('Исполнитель', executor, 'Заказчик', customer),
-            ('Дата начала АФС', date_start, 'Дата окончания АФС', date_end),
-            ('Застроенная/Не застроенная', nature_area, 'Вид съёмки', type_shoot),
-            ('Фактическая площадь АФС, для АФС объекта площадного характера', '', '', area_afs),
-            ('Фактическая протяжность АФС, км, для АФС линейного объекта', '', '', length_afs),
-            ('Ориентация маршрутов', '', '', orientation_route),
-            ('Продольное перекрытие', overlap_longitudinal, 'Поперечное перекрытие', overlap_transverse),
-            ('Высота фотографирования', height, 'Номинальное пространственное\nразрешение, м', resolution),
-            ('Модель аэрофотокамеры', camera_model, 'Серийный номер\nаэрофотокамеры', camera_sn),
-            ('Наличие и тип компенсации продольного сдвига изображения', '', '', long_shift),
-            ('Фокусное расстояние\nаэрофотокамеры, мм', focal_len, 'Тип и серийный номер объектива\n(если объектив съёмный,\nзаменяемый)', type_lens),
-            ('Размер кадра N(x) пикс', frame_size_x, 'Размер кадра N(y) пикс', frame_size_y),
-            ('Физический размер пикселя, мм', pixel_size, 'Ориентация системы\nкоординат снимка', coordinate_orientation),
-            ('Тип аэрофотоустановки\n(гироплатформы)', api_type, 'Серийный номер аэрофотоустановки\n(гироплатформы)', api_sn),
-            ('Спектральная характеристика аэрофотоснимков', '', '', spectral_characteristics_photo), 
-            ('Формат представления цифрового изображения', '', '', image_format),
-            ('Лидар (тип)', lidar_type, 'Лидар, серийный номер', lidar_sn),
-            ('Блок определения положения и ориентации, тип,\nмодель, состав', '', '', definition_block),
-            ('ГНСС-приёмник, тип, модель', '', '', receiver),
-            ('Прочая аппаратура', '', '', other_equipment),
-            ('Воздушное судно', '', '', aircraft),
-            ('Дополнительные сведения по требованию ТЗ', '', '', add_information)]
+        fields = [
+            {"name_object": name_object,  "filming_location": filming_location, "executor": executor,
+            "customer": customer, "date_start": date_start, "date_end": date_end,
+            "nature_area": nature_area, "type_shoot": type_shoot, "area_afs": area_afs, "length_afs": length_afs,
+            "orientation_route": orientation_route, "overlap_longitudinal": overlap_longitudinal,
+            "overlap_transverse": overlap_transverse, "height": height, "resolution": resolution,
+            "camera_model": camera_model, "camera_sn": camera_sn, "long_shift": long_shift,
+            "focal_len": focal_len, "type_lens": type_lens, "frame_size_x": frame_size_x,
+            "frame_size_y": frame_size_y, "pixel_size": pixel_size, "coordinate_orientation": coordinate_orientation,
+            "api_type": api_type, "api_sn": api_sn, "spectral_characteristics_photo": spectral_characteristics_photo,
+            "image_format": image_format, "lidar_type": lidar_type, "lidar_sn": lidar_sn,
+            "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
+            "aircraft": aircraft, "add_information": add_information}
+        ]
 
-        #table2 = tabulate(data2, tablefmt="fancy_grid", stralign='left', numalign="left")
-        print(data2)
-        data2.to_html('E:/project/ttt.html', index=False)
+        environment = Environment(loader=FileSystemLoader("templates/"))
+        template = environment.get_template("template_table.html")
+
+        for field in fields:
+            filename = f"tableAP.html"
+            content = template.render(
+                field
+            )
+            with open(filename, mode="w", encoding="utf-8") as message:
+                message.write(content)
+                print(f"... wrote {filename}")
