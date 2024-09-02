@@ -32,9 +32,9 @@ from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
 from datetime import datetime
+import jinja2
 import pandas as pd
 import os.path
-import jinja2
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
@@ -341,6 +341,7 @@ class AerialPhotographyGUI:
 
 
     def save(self):
+
         # Список полей
         name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
         filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
@@ -381,6 +382,7 @@ class AerialPhotographyGUI:
         #list = [name_object, filming_location, executor, customer, date_start, date_end, nature_area, type_shoot, area_afs, length_afs, orientation_route, overlap_longitudinal,
         #    overlap_transverse, height, resolution, camera_model, camera_sn, long_shift, focal_len, type_lens, frame_size_x, frame_size_y, pixel_size, coordinate_orientation, api_type,
         #    api_sn, spectral_characteristics_photo, image_format, lidar_type, lidar_sn, definition_block, receiver, other_equipment, aircraft]
+
         fields = [
             {"name_object": name_object,  "filming_location": filming_location, "executor": executor,
             "customer": customer, "date_start": date_start, "date_end": date_end,
@@ -395,7 +397,23 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
+        
+        # Загрузка шаблона из файла
+        loader = jinja2.FileSystemLoader('templates')
+        environment = jinja2.Environment(loader=loader)
+        template = environment.get_template('template_table.html')
 
+        # Рендеринг шаблона для каждого набора данных
+        for field in fields:
+            filename = f"tableAP111.html"
+            content = template.render(field=field)
+
+            # Сохранение отрендеренного шаблона в файл
+            with open(filename, mode="w", encoding="utf-8") as message:
+                message.write(content)
+                print(f"... wrote {filename}")
+
+"""
         # Загрузка шаблона из файла
         template_path = "templates/"
         loader = jinja2.FileSystemLoader(searchpath="templates/")
@@ -411,3 +429,4 @@ class AerialPhotographyGUI:
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
                 print(f"... wrote {filename}")
+"""
