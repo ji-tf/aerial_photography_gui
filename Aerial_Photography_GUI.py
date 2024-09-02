@@ -31,11 +31,10 @@ from qgis.utils import iface
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
-#from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import pandas as pd
 import os.path
-import jinja2
+from jinja2 import Environment, FileSystemLoader
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
@@ -396,24 +395,24 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
-
+"""
         # Загрузка шаблона из файла
-        template_path = "E:\project\aerial_photography_gui\templates\template_table.html"
-        loader = jinja2.FileSystemLoader(searchpath="E:\project\aerial_photography_gui\templates")
+        template_path = "templates/"
+        loader = jinja2.FileSystemLoader(searchpath="templates/")
         environment = jinja2.Environment(loader=loader)
         template = environment.get_template(template_path)
 
         # Рендеринг шаблона для каждого набора данных
         for field in fields:
-            filename = f"E:\project\aerial_photography_gui\templates\{field['name_object']}.html"
+            filename = f"1234567.html"
             content = template.render(field=field)
 
             # Сохранение отрендеренного шаблона в файл
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
                 print(f"... wrote {filename}")
-        
-        """environment = Environment(loader=FileSystemLoader("E:\project\aerial_photography_gui\templates\template_table.html"))
+"""        
+        environment = Environment(loader=FileSystemLoader("templates/"))
         template = environment.get_template("template_table.html")
 
         for field in fields:
@@ -421,4 +420,4 @@ class AerialPhotographyGUI:
             content = template.render(field=field)
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
-                print(f"... wrote {filename}")"""
+                print(f"... wrote {filename}")
