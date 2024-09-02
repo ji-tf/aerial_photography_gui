@@ -401,7 +401,7 @@ class AerialPhotographyGUI:
         # Загрузка шаблона из файла
         loader = jinja2.FileSystemLoader('templates')
         environment = jinja2.Environment(loader=loader)
-        template = environment.get_template('E:\project\aerial_photography_gui\templates\template_table.html')
+        template = environment.get_template('template_table.html')
 
         # Рендеринг шаблона для каждого набора данных
         for field in fields:
