@@ -389,7 +389,7 @@ class AerialPhotographyGUI:
             "overlap_transverse": overlap_transverse, "height": height, "resolution": resolution,
             "camera_model": camera_model, "camera_sn": camera_sn, "long_shift": long_shift,
             "focal_len": focal_len, "type_lens": type_lens, "frame_size_x": frame_size_x,
-            "frame_size_y": frame_size_y, "pixel_size": pixel_size, "coordinate_orientation": coordinate_orientation,
+ #           "frame_size_y": frame_size_y, "pixel_size": pixel_size, "coordinate_orientation": coordinate_orientation,
             "api_type": api_type, "api_sn": api_sn, "spectral_characteristics_photo": spectral_characteristics_photo,
             "image_format": image_format, "lidar_type": lidar_type, "lidar_sn": lidar_sn,
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
