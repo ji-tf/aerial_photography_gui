@@ -34,7 +34,7 @@ from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
 from datetime import datetime
 import pandas as pd
 import os.path
-from jinja2 import Environment, FileSystemLoader
+import jinja2
 
 class AerialPhotographyGUI:
     """QGIS Plugin Implementation."""
@@ -395,7 +395,7 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
-"""
+
         # Загрузка шаблона из файла
         template_path = "templates/"
         loader = jinja2.FileSystemLoader(searchpath="templates/")
@@ -408,16 +408,6 @@ class AerialPhotographyGUI:
             content = template.render(field=field)
 
             # Сохранение отрендеренного шаблона в файл
-            with open(filename, mode="w", encoding="utf-8") as message:
-                message.write(content)
-                print(f"... wrote {filename}")
-"""        
-        environment = Environment(loader=FileSystemLoader("templates/"))
-        template = environment.get_template("template_table.html")
-
-        for field in fields:
-            filename = f"E:\project\aerial_photography_gui\templates\tableAP111.html"
-            content = template.render(field=field)
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
                 print(f"... wrote {filename}")
