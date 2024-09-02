@@ -405,7 +405,7 @@ class AerialPhotographyGUI:
 
         # Рендеринг шаблона для каждого набора данных
         for field in fields:
-            filename = f"E:\project\aerial_photography_gui\templates\tableAP111.html"
+            filename = f"E:\project\aerial_photography_gui\templates\{field['name_object']}.html"
             content = template.render(field=field)
 
             # Сохранение отрендеренного шаблона в файл
