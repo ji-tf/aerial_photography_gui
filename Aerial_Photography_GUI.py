@@ -396,11 +396,11 @@ class AerialPhotographyGUI:
             "aircraft": aircraft, "add_information": add_information}
         ]
 
-        environment = Environment(loader=FileSystemLoader("E:/project/templates/template_table.html"))
+        environment = Environment(loader=FileSystemLoader("E:\project\aerial_photography_gui\templates\template_table.html"))
         template = environment.get_template("template_table.html")
 
         for field in fields:
-            filename = f"E:/project/templates/tableAP111.html"
+            filename = f"E:\project\aerial_photography_gui\templates\tableAP111.html"
             content = template.render(
                 field
             )
