@@ -409,8 +409,8 @@ class AerialPhotographyGUI:
             content = template.render(field=field)
 
             # Сохранение отрендеренного шаблона в файл
-            with open(filename, mode="w", encoding="utf-8") as message:
-                message.write(content)
+            with open(filename, mode="w", encoding="utf-8") as f:
+                f.write(content)
                 print(f"... wrote {filename}")
 
 """
