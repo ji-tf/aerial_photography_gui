@@ -397,7 +397,7 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
-        template_path = os.path.join(os.path.dirname(__file__), "tableAP111", "templates")
+        template_path = os.path.join(os.path.dirname(__file__), "tableAP111", "E:\project\aerial_photography_gui\templates\templates")
         # Загрузка шаблона из файла
         loader = jinja2.FileSystemLoader(template_path)
         environment = jinja2.Environment(loader=loader)
