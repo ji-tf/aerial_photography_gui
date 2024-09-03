@@ -37,7 +37,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-153</y>
+         <y>-313</y>
          <width>1001</width>
          <height>841</height>
         </rect>
@@ -53,28 +53,28 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
            <item row="2" column="1">
-            <widget class="QDateEdit" name="date_start_4">
+            <widget class="QDateEdit" name="date_start">
              <property name="enabled">
               <bool>true</bool>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_name_object_4">
+            <widget class="QLabel" name="label_name_object">
              <property name="text">
               <string>Название или шифр объекта съёмки</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLineEdit" name="name_object_4">
+            <widget class="QLineEdit" name="name_object">
              <property name="text">
               <string/>
              </property>
             </widget>
            </item>
            <item row="3" column="1">
-            <widget class="QComboBox" name="nature_area_4">
+            <widget class="QComboBox" name="nature_area">
              <item>
               <property name="text">
                <string>Застроенная</string>
@@ -88,38 +88,38 @@
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QLabel" name="label_date_start_4">
+            <widget class="QLabel" name="label_date_start">
              <property name="text">
               <string>Дата начала АФС</string>
              </property>
             </widget>
            </item>
            <item row="6" column="0" colspan="4">
-            <widget class="QLabel" name="label_orientation_route_4">
+            <widget class="QLabel" name="label_orientation_route">
              <property name="text">
               <string>Ориентация маршрутов (широтная, меридиональная, заданная)</string>
              </property>
             </widget>
            </item>
            <item row="0" column="3">
-            <widget class="QLabel" name="label_filming_location_4">
+            <widget class="QLabel" name="label_filming_location">
              <property name="text">
               <string>Съёмочный участок</string>
              </property>
             </widget>
            </item>
            <item row="7" column="3">
-            <widget class="QLabel" name="label_overlap_transverse_4">
+            <widget class="QLabel" name="label_overlap_transverse">
              <property name="text">
               <string>Поперечное перекрытие, %</string>
              </property>
             </widget>
            </item>
            <item row="2" column="4">
-            <widget class="QDateEdit" name="date_end_4"/>
+            <widget class="QDateEdit" name="date_end"/>
            </item>
            <item row="1" column="1">
-            <widget class="QComboBox" name="executor_4">
+            <widget class="QComboBox" name="executor">
              <item>
               <property name="text">
                <string/>
@@ -151,10 +151,10 @@
             </spacer>
            </item>
            <item row="7" column="1">
-            <widget class="QLineEdit" name="overlap_longitudinal_4"/>
+            <widget class="QLineEdit" name="overlap_longitudinal"/>
            </item>
            <item row="6" column="4">
-            <widget class="QComboBox" name="orientation_route_4">
+            <widget class="QComboBox" name="orientation_route">
              <item>
               <property name="text">
                <string/>
@@ -178,86 +178,86 @@
             </widget>
            </item>
            <item row="1" column="3">
-            <widget class="QLabel" name="label_customer_4">
+            <widget class="QLabel" name="label_customer">
              <property name="text">
               <string>Заказчик</string>
              </property>
             </widget>
            </item>
            <item row="0" column="4">
-            <widget class="QLineEdit" name="filming_location_4">
+            <widget class="QLineEdit" name="filming_location">
              <property name="text">
               <string/>
              </property>
             </widget>
            </item>
            <item row="4" column="0" colspan="4">
-            <widget class="QLabel" name="label_area_afs_4">
+            <widget class="QLabel" name="label_area_afs">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Фактическая площадь АФС, км&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;, для АФС объекта площадного характера&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
            <item row="3" column="4">
-            <widget class="QLineEdit" name="type_shoot_4"/>
+            <widget class="QLineEdit" name="type_shoot"/>
            </item>
            <item row="2" column="3">
-            <widget class="QLabel" name="label_date_end_4">
+            <widget class="QLabel" name="label_date_end">
              <property name="text">
               <string>Дата окончания АФС</string>
              </property>
             </widget>
            </item>
            <item row="4" column="4">
-            <widget class="QLineEdit" name="area_afs_4"/>
+            <widget class="QLineEdit" name="area_afs"/>
            </item>
            <item row="7" column="0">
-            <widget class="QLabel" name="label_overlap_longitudinal_4">
+            <widget class="QLabel" name="label_overlap_longitudinal">
              <property name="text">
               <string>Продольное перекрытие, %</string>
              </property>
             </widget>
            </item>
            <item row="3" column="0">
-            <widget class="QLabel" name="label_nature_area_4">
+            <widget class="QLabel" name="label_nature_area">
              <property name="text">
               <string>Характер местности</string>
              </property>
             </widget>
            </item>
            <item row="1" column="4">
-            <widget class="QLineEdit" name="customer_4">
+            <widget class="QLineEdit" name="customer">
              <property name="text">
               <string/>
              </property>
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="QLabel" name="label_type_shoot_4">
+            <widget class="QLabel" name="label_type_shoot">
              <property name="text">
               <string>Вид съёмки</string>
              </property>
             </widget>
            </item>
            <item row="5" column="0" colspan="4">
-            <widget class="QLabel" name="label_length_afs_4">
+            <widget class="QLabel" name="label_length_afs">
              <property name="text">
               <string>Фактическая протяжность АФС, км, для АФС линейного объекта</string>
              </property>
             </widget>
            </item>
            <item row="5" column="4">
-            <widget class="QLineEdit" name="length_afs_4"/>
+            <widget class="QLineEdit" name="length_afs"/>
            </item>
            <item row="1" column="0">
-            <widget class="QLabel" name="label_executor_4">
+            <widget class="QLabel" name="label_executor">
              <property name="text">
               <string>Исполнитель АФС</string>
              </property>
             </widget>
            </item>
            <item row="7" column="4">
-            <widget class="QLineEdit" name="overlap_transverse_4"/>
+            <widget class="QLineEdit" name="overlap_transverse"/>
            </item>
           </layout>
          </widget>
@@ -305,131 +305,131 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_10">
            <item row="6" column="4">
-            <widget class="QLabel" name="label_api_sn_5">
+            <widget class="QLabel" name="label_api_sn">
              <property name="text">
               <string>Серийный номер аэрофотоустановки (гироплатформы)</string>
              </property>
             </widget>
            </item>
            <item row="1" column="4">
-            <widget class="QLabel" name="label_camera_sn_5">
+            <widget class="QLabel" name="label_camera_sn">
              <property name="text">
               <string>Серийный номер аэрофотокамеры</string>
              </property>
             </widget>
            </item>
            <item row="3" column="0" colspan="2">
-            <widget class="QLabel" name="label_focal_len_5">
+            <widget class="QLabel" name="label_focal_len">
              <property name="text">
               <string>Фокусное расстояние аэрофотокамеры, мм</string>
              </property>
             </widget>
            </item>
            <item row="2" column="0" colspan="3">
-            <widget class="QLabel" name="label_long_shift_5">
+            <widget class="QLabel" name="label_long_shift">
              <property name="text">
               <string>Наличие и тип компенсации продольного сдвига изображения</string>
              </property>
             </widget>
            </item>
            <item row="3" column="4">
-            <widget class="QLabel" name="label_type_lens_5">
+            <widget class="QLabel" name="label_type_lens">
              <property name="text">
               <string>Тип и серийный номер объектива (если объектив заменяемый)</string>
              </property>
             </widget>
            </item>
            <item row="3" column="2">
-            <widget class="QLineEdit" name="focal_len_5">
+            <widget class="QLineEdit" name="focal_len">
              <property name="text">
               <string>20</string>
              </property>
             </widget>
            </item>
            <item row="8" column="5">
-            <widget class="QLineEdit" name="image_format_5">
+            <widget class="QLineEdit" name="image_format">
              <property name="text">
               <string>ARW</string>
              </property>
             </widget>
            </item>
            <item row="5" column="2">
-            <widget class="QLineEdit" name="pixel_size_5"/>
+            <widget class="QLineEdit" name="pixel_size"/>
            </item>
            <item row="0" column="5">
-            <widget class="QLineEdit" name="resolution_5"/>
+            <widget class="QLineEdit" name="resolution"/>
            </item>
            <item row="0" column="2">
-            <widget class="QLineEdit" name="height_5"/>
+            <widget class="QLineEdit" name="height"/>
            </item>
            <item row="7" column="4">
-            <widget class="QLabel" name="label_spectral_characteristics_photo_5">
+            <widget class="QLabel" name="label_spectral_characteristics_photo">
              <property name="text">
               <string>Спектральная характеристика аэрофотоснимков</string>
              </property>
             </widget>
            </item>
            <item row="3" column="5">
-            <widget class="QLineEdit" name="type_lens_5">
+            <widget class="QLineEdit" name="type_lens">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="4" column="2">
-            <widget class="QLineEdit" name="frame_size_x_5">
+            <widget class="QLineEdit" name="frame_size_x">
              <property name="text">
               <string>6000</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QLabel" name="label_camera_model_5">
+            <widget class="QLabel" name="label_camera_model">
              <property name="text">
               <string>Модель аэрофотокамеры</string>
              </property>
             </widget>
            </item>
            <item row="4" column="5">
-            <widget class="QLineEdit" name="frame_size_y_5">
+            <widget class="QLineEdit" name="frame_size_y">
              <property name="text">
               <string>4000</string>
              </property>
             </widget>
            </item>
            <item row="2" column="4" colspan="2">
-            <widget class="QLineEdit" name="long_shift_5">
+            <widget class="QLineEdit" name="long_shift">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="6" column="0">
-            <widget class="QLabel" name="label_api_type_5">
+            <widget class="QLabel" name="label_api_type">
              <property name="text">
               <string>Тип аэрофотоустановки (гироплатформы)</string>
              </property>
             </widget>
            </item>
            <item row="5" column="5">
-            <widget class="QLineEdit" name="coordinate_orientation_5"/>
+            <widget class="QLineEdit" name="coordinate_orientation"/>
            </item>
            <item row="0" column="4">
-            <widget class="QLabel" name="label_resolution_5">
+            <widget class="QLabel" name="label_resolution">
              <property name="text">
               <string>Номинальное пространственное разрешение, м</string>
              </property>
             </widget>
            </item>
            <item row="4" column="4">
-            <widget class="QLabel" name="label_frame_size_y_5">
+            <widget class="QLabel" name="label_frame_size_y">
              <property name="text">
               <string>Размер кадра N(y) пикс</string>
              </property>
             </widget>
            </item>
            <item row="1" column="2">
-            <widget class="QLineEdit" name="camera_model_5">
+            <widget class="QLineEdit" name="camera_model">
              <property name="text">
               <string>Sony A6000</string>
              </property>
@@ -449,63 +449,63 @@
             </spacer>
            </item>
            <item row="6" column="2">
-            <widget class="QLineEdit" name="api_type_5">
+            <widget class="QLineEdit" name="api_type">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="5" column="4">
-            <widget class="QLabel" name="label_coordinate_orientation_5">
+            <widget class="QLabel" name="label_coordinate_orientation">
              <property name="text">
               <string>Ориентация системы координат снимка</string>
              </property>
             </widget>
            </item>
            <item row="4" column="0">
-            <widget class="QLabel" name="label_frame_size_x_5">
+            <widget class="QLabel" name="label_frame_size_x">
              <property name="text">
               <string>Размер кадра N(x) пикс</string>
              </property>
             </widget>
            </item>
            <item row="5" column="0">
-            <widget class="QLabel" name="label_pixel_size_5">
+            <widget class="QLabel" name="label_pixel_size">
              <property name="text">
               <string>Физический размер пикселя, мм</string>
              </property>
             </widget>
            </item>
            <item row="7" column="5">
-            <widget class="QLineEdit" name="spectral_characteristics_photo_5">
+            <widget class="QLineEdit" name="spectral_characteristics_photo">
              <property name="text">
               <string>NIR</string>
              </property>
             </widget>
            </item>
            <item row="8" column="4">
-            <widget class="QLabel" name="label_image_format_5">
+            <widget class="QLabel" name="label_image_format">
              <property name="text">
               <string>Формат представления цифрового изображения</string>
              </property>
             </widget>
            </item>
            <item row="6" column="5">
-            <widget class="QLineEdit" name="api_sn_5">
+            <widget class="QLineEdit" name="api_sn">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="1" column="5">
-            <widget class="QLineEdit" name="camera_sn_5">
+            <widget class="QLineEdit" name="camera_sn">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_height_5">
+            <widget class="QLabel" name="label_height">
              <property name="text">
               <string>Высота фотографирования, м</string>
              </property>
@@ -524,21 +524,21 @@
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
            <item row="3" column="0" colspan="2">
-            <widget class="QLabel" name="label_other_equipment_3">
+            <widget class="QLabel" name="label_other_equipment">
              <property name="text">
               <string>Прочая аппаратура</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLineEdit" name="lidar_type_3">
+            <widget class="QLineEdit" name="lidar_type">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="0" column="3">
-            <widget class="QLabel" name="label_lidar_sn_3">
+            <widget class="QLabel" name="label_lidar_sn">
              <property name="text">
               <string>Лидар, серийный номер</string>
              </property>
@@ -552,66 +552,66 @@
             </widget>
            </item>
            <item row="1" column="0" colspan="2">
-            <widget class="QLabel" name="label_definition_block_3">
+            <widget class="QLabel" name="label_definition_block">
              <property name="text">
               <string>Блок определения положения и ориентации, тип, модель, состав</string>
              </property>
             </widget>
            </item>
            <item row="2" column="0" colspan="2">
-            <widget class="QLabel" name="label_receiver_3">
+            <widget class="QLabel" name="label_receiver">
              <property name="text">
               <string>ГНСС-приёмник, тип, модель</string>
              </property>
             </widget>
            </item>
            <item row="2" column="2" colspan="3">
-            <widget class="QLineEdit" name="receiver_3">
+            <widget class="QLineEdit" name="receiver">
              <property name="text">
               <string>Topcon OEM</string>
              </property>
             </widget>
            </item>
            <item row="5" column="0">
-            <widget class="QLabel" name="label_add_information_4">
+            <widget class="QLabel" name="label_add_information">
              <property name="text">
               <string>Дополнительные сведения по требованию ТЗ</string>
              </property>
             </widget>
            </item>
            <item row="0" column="4">
-            <widget class="QLineEdit" name="lidar_sn_3">
+            <widget class="QLineEdit" name="lidar_sn">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="4" column="2" colspan="3">
-            <widget class="QLineEdit" name="aircraft_5">
+            <widget class="QLineEdit" name="aircraft">
              <property name="text">
               <string>Геоскан 201 Агрогеодезия</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="label_lidar_type_3">
+            <widget class="QLabel" name="label_lidar_type">
              <property name="text">
               <string>Лидар (тип)</string>
              </property>
             </widget>
            </item>
            <item row="3" column="2" colspan="3">
-            <widget class="QLineEdit" name="other_equipment_3">
+            <widget class="QLineEdit" name="other_equipment">
              <property name="text">
               <string>Нет</string>
              </property>
             </widget>
            </item>
            <item row="1" column="2" colspan="3">
-            <widget class="QLineEdit" name="definition_block_3"/>
+            <widget class="QLineEdit" name="definition_block"/>
            </item>
            <item row="4" column="0" colspan="2">
-            <widget class="QLabel" name="label_aircraft_3">
+            <widget class="QLabel" name="label_aircraft">
              <property name="text">
               <string>Воздушное судно</string>
              </property>
@@ -755,7 +755,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>name_object_4</receiver>
+   <receiver>name_object</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -771,7 +771,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>overlap_longitudinal_4</receiver>
+   <receiver>overlap_longitudinal</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -787,7 +787,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>height_5</receiver>
+   <receiver>height</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -803,7 +803,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>pixel_size_5</receiver>
+   <receiver>pixel_size</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -819,7 +819,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>filming_location_4</receiver>
+   <receiver>filming_location</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -835,7 +835,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>customer_4</receiver>
+   <receiver>customer</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -851,7 +851,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>type_shoot_4</receiver>
+   <receiver>type_shoot</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -867,7 +867,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>area_afs_4</receiver>
+   <receiver>area_afs</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -883,7 +883,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>length_afs_4</receiver>
+   <receiver>length_afs</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -899,7 +899,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>overlap_transverse_4</receiver>
+   <receiver>overlap_transverse</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -915,7 +915,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>resolution_5</receiver>
+   <receiver>resolution</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -931,7 +931,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>coordinate_orientation_5</receiver>
+   <receiver>coordinate_orientation</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -947,7 +947,7 @@
   <connection>
    <sender>clear</sender>
    <signal>clicked()</signal>
-   <receiver>definition_block_3</receiver>
+   <receiver>definition_block</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">

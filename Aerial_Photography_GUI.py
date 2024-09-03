@@ -25,12 +25,14 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.gui import QgsFileWidget
+from qgis.PyQt.QtWidgets import QFileDialog
 from qgis.utils import iface
 # Initialize Qt resources from file resources.py
 from .resources import *
 # Import the code for the dialog
 from .Aerial_Photography_GUI_dialog import AerialPhotographyGUIDialog
 from datetime import datetime
+import jinja2
 import pandas as pd
 import os.path
 
@@ -184,7 +186,7 @@ class AerialPhotographyGUI:
             self.dockwidget.radioButton_5.clicked.connect(self.camera_model_5_redo)
             self.dockwidget.radioButton_6.clicked.connect(self.camera_model_6_redo)
             self.dockwidget.button_analysis_txt.clicked.connect(self.analysis_txt)
-            #self.dockwidget.saveButton.helpRequested.connect(self.save_file_tabl)
+            self.dockwidget.save.clicked.connect(self.save)
         
 
     def unload(self):
@@ -225,34 +227,36 @@ class AerialPhotographyGUI:
     
     def camera_model_5_redo(self):
 
-        self.dockwidget.camera_model_5.setText('Sony RX1RM2')
-        self.dockwidget.focal_len_5.setText('35')
-        self.dockwidget.frame_size_x_5.setText('7952')
-        self.dockwidget.frame_size_y_5.setText('5304')
-        self.dockwidget.spectral_characteristics_photo_5.setText('RGB')
-        self.dockwidget.image_format_5.setText('JPEG')
+        self.dockwidget.camera_model.setText('Sony RX1RM2')
+        self.dockwidget.focal_len.setText('35')
+        self.dockwidget.frame_size_x.setText('7952')
+        self.dockwidget.frame_size_y.setText('5304')
+        self.dockwidget.spectral_characteristics_photo.setText('RGB')
+        self.dockwidget.image_format.setText('JPEG')
 
     def camera_model_6_redo(self):
 
-        self.dockwidget.camera_model_5.setText('Sony A6000')
-        self.dockwidget.focal_len_5.setText('20')
-        self.dockwidget.frame_size_x_5.setText('6000')
-        self.dockwidget.frame_size_y_5.setText('4000')
-        self.dockwidget.spectral_characteristics_photo_5.setText('NIR')
-        self.dockwidget.image_format_5.setText('ARW')
+        self.dockwidget.camera_model.setText('Sony A6000')
+        self.dockwidget.focal_len.setText('20')
+        self.dockwidget.frame_size_x.setText('6000')
+        self.dockwidget.frame_size_y.setText('4000')
+        self.dockwidget.spectral_characteristics_photo.setText('NIR')
+        self.dockwidget.image_format.setText('ARW')
 
 
     def analysis_txt(self):
+        file_path = self.dockwidget.button_choise_txt.filePath()
         file_widget = QgsFileWidget()
-        file_widget.setFilePath(self.dockwidget.button_choise_txt)
-        file_path = file_widget.filePath()
+        file_widget.setFilePath(file_path)
+        #filename, filter = QFileDialog.getOpenFileName(self.dockwidget, 'Выбрать текстовый файл', '', filter='Текстовые файлы (*.txt)')
+        #file_widget.setFilePath(filename)
 
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
             # Выясняем сколько всего строк
             num_lines = len(lines)
 
-        # Создание необходимых списков
+        # Создание необходимых списко
         list_file_number = [] # Все номера снимков
         list_yaw = [] # Все значения yaw
         list_number_m = [] # Номера маршрутов
@@ -324,7 +328,7 @@ class AerialPhotographyGUI:
             second = (minute - int_min) *60
             int_sec = round(second)
             course_gms.append(f"{int_num_yaw}{"\u00B0"}{int_min}{"'"}{int_sec}{'"'}")
-
+        
         #data = [[new_date_str], [list_number_m], [course_gms], [list_number_end]]
         df = pd.DataFrame({'Дата аэрофотосъёмки': new_date_str,
                         'Номер маршрута': list_number_m,
@@ -336,5 +340,94 @@ class AerialPhotographyGUI:
         df.to_html('E:/project/test.html', index=False)
 
 
-#    def save_file_tabl(self):
-#        pass
+    def save(self):
+
+        # Список полей
+        name_object = self.dockwidget.name_object.text() # Название или шифр объекта съёмки
+        filming_location = self.dockwidget.filming_location.text() # Съёмочный участок
+        executor = self.dockwidget.executor.currentText() # Исполнитель
+        customer = self.dockwidget.customer.text() # Заказчик
+        date_start = self.dockwidget.date_start.text() # Дата начала АФС
+        date_end = self.dockwidget.date_end.text() # Дата окончания АФС
+        nature_area = self.dockwidget.nature_area.currentText() # (Не)Застроенная
+        type_shoot = self.dockwidget.type_shoot.text() # Вид съёмки
+        area_afs = self.dockwidget.area_afs.text() # Фактическая площадь АФС, для АФС объекта площадного характера
+        length_afs = self.dockwidget.length_afs.text() # Фактическая протяжность АФС, км, для АФС линейного объекта
+        orientation_route = self.dockwidget.orientation_route.currentText() # Ориентация маршрутов (широтная, меридиональная, заданная)
+        overlap_longitudinal = self.dockwidget.overlap_longitudinal.text() # Продольное перекрытие
+        overlap_transverse = self.dockwidget.overlap_transverse.text() # Поперечное перекрытие
+        height = self.dockwidget.height.text() # Высота фотографирования
+        resolution = self.dockwidget.resolution.text() # Номинальное пространственное разрешение, м
+        camera_model = self.dockwidget.camera_model.text() # Модель аэрофотокамеры
+        camera_sn = self.dockwidget.camera_sn.text() # Серийный номер аэрофотокамеры
+        long_shift = self.dockwidget.long_shift.text() # Наличие и тип компенсации продольного сдвига изображения
+        focal_len = self.dockwidget.focal_len.text() # Фокусное расстояние аэрофотокамеры, мм
+        type_lens = self.dockwidget.type_lens.text() # Тип и серийный номер объектива (если объектив заменяемый)
+        frame_size_x = self.dockwidget.frame_size_x.text() # Размер кадра N(x) пикс
+        frame_size_y = self.dockwidget.frame_size_y.text() # Размер кадра N(y) пикс
+        pixel_size = self.dockwidget.pixel_size.text() # Физический размер пикселя, мм
+        coordinate_orientation = self.dockwidget.coordinate_orientation.text() # Ориентация системы координат снимка
+        api_type = self.dockwidget.api_type.text() # Тип аэрофотоустановки (гироплатформы)
+        api_sn = self.dockwidget.api_sn.text() # Серийный номер аэрофотоустановки (гироплатформы)
+        spectral_characteristics_photo = self.dockwidget.spectral_characteristics_photo.text() # Спектральная характеристика аэрофотоснимков
+        image_format = self.dockwidget.image_format.text() # Формат представления цифрового изображения
+        lidar_type = self.dockwidget.lidar_type.text() # Лидар (тип)
+        lidar_sn = self.dockwidget.lidar_sn.text() # Лидар, серийный номер
+        definition_block = self.dockwidget.definition_block.text() # Блок определения положения и ориентации, тип, модель, состав
+        receiver = self.dockwidget.receiver.text() # ГНСС-приёмник, тип, модель
+        other_equipment = self.dockwidget.other_equipment.text() # Прочая аппаратура
+        aircraft = self.dockwidget.aircraft.text() # Воздушное судно"))
+        add_information = self.dockwidget.add_information.text() # Дополнительные сведения по требованию ТЗ
+
+        #list = [name_object, filming_location, executor, customer, date_start, date_end, nature_area, type_shoot, area_afs, length_afs, orientation_route, overlap_longitudinal,
+        #    overlap_transverse, height, resolution, camera_model, camera_sn, long_shift, focal_len, type_lens, frame_size_x, frame_size_y, pixel_size, coordinate_orientation, api_type,
+        #    api_sn, spectral_characteristics_photo, image_format, lidar_type, lidar_sn, definition_block, receiver, other_equipment, aircraft]
+
+        fields = [
+            {"name_object": name_object,  "filming_location": filming_location, "executor": executor,
+            "customer": customer, "date_start": date_start, "date_end": date_end,
+            "nature_area": nature_area, "type_shoot": type_shoot, "area_afs": area_afs, "length_afs": length_afs,
+            "orientation_route": orientation_route, "overlap_longitudinal": overlap_longitudinal,
+            "overlap_transverse": overlap_transverse, "height": height, "resolution": resolution,
+            "camera_model": camera_model, "camera_sn": camera_sn, "long_shift": long_shift,
+            "focal_len": focal_len, "type_lens": type_lens, "frame_size_x": frame_size_x,
+            "frame_size_y": frame_size_y, "pixel_size": pixel_size, "coordinate_orientation": coordinate_orientation,
+            "api_type": api_type, "api_sn": api_sn, "spectral_characteristics_photo": spectral_characteristics_photo,
+            "image_format": image_format, "lidar_type": lidar_type, "lidar_sn": lidar_sn,
+            "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
+            "aircraft": aircraft, "add_information": add_information}
+        ]
+
+        """
+        template_path = os.path.join(os.path.dirname(__file__), "tableAP111", "E:\project\aerial_photography_gui\templates\template_table.html")
+        # Загрузка шаблона из файла
+        loader = jinja2.FileSystemLoader(template_path)
+        environment = jinja2.Environment(loader=loader)
+        template = environment.get_template('template_table.html')
+
+        # Рендеринг шаблона для каждого набора данных
+        for field in fields:
+            filename = f"tableAP111.html"
+            content = template.render(field=field)
+
+            # Сохранение отрендеренного шаблона в файл
+            with open(os.path.join("tableAP111", filename), mode="w", encoding="utf-8") as f:
+                f.write(content)
+                print(f"... wrote {filename}")
+        """
+
+        # Загрузка шаблона из файла
+        template_path = "templates\template_table.html"
+        loader = jinja2.FileSystemLoader(searchpath="templates")
+        environment = jinja2.Environment(loader=loader)
+        template = environment.get_template(template_path)
+
+        # Рендеринг шаблона для каждого набора данных
+        for field in fields:
+            filename = f"templates\tableAP111.html"
+            content = template.render(field=field)
+
+            # Сохранение отрендеренного шаблона в файл
+            with open(filename, mode="w", encoding="utf-8") as message:
+                message.write(content)
+                print(f"... wrote {filename}")
