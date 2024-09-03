@@ -397,9 +397,9 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
-        
+        template_path = os.path.join(os.path.dirname(__file__), "templates")
         # Загрузка шаблона из файла
-        loader = jinja2.FileSystemLoader('templates')
+        loader = jinja2.FileSystemLoader(template_path)
         environment = jinja2.Environment(loader=loader)
         template = environment.get_template('template_table.html')
 
