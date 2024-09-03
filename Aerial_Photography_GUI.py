@@ -397,6 +397,8 @@ class AerialPhotographyGUI:
             "definition_block": definition_block, "receiver": receiver, "other_equipment": other_equipment,
             "aircraft": aircraft, "add_information": add_information}
         ]
+        
+        """
         template_path = os.path.join(os.path.dirname(__file__), "tableAP111", "E:\project\aerial_photography_gui\templates\template_table.html")
         # Загрузка шаблона из файла
         loader = jinja2.FileSystemLoader(template_path)
@@ -412,21 +414,20 @@ class AerialPhotographyGUI:
             with open(os.path.join("tableAP111", filename), mode="w", encoding="utf-8") as f:
                 f.write(content)
                 print(f"... wrote {filename}")
+        """
 
-"""
         # Загрузка шаблона из файла
-        template_path = "templates/"
-        loader = jinja2.FileSystemLoader(searchpath="templates/")
+        template_path = "E:\project\aerial_photography_gui\templates\template_table.html"
+        loader = jinja2.FileSystemLoader(searchpath="E:\project\aerial_photography_gui\templates")
         environment = jinja2.Environment(loader=loader)
         template = environment.get_template(template_path)
 
         # Рендеринг шаблона для каждого набора данных
         for field in fields:
-            filename = f"1234567.html"
+            filename = f"E:\project\aerial_photography_gui\templates\tableAP111.html"
             content = template.render(field=field)
 
             # Сохранение отрендеренного шаблона в файл
             with open(filename, mode="w", encoding="utf-8") as message:
                 message.write(content)
                 print(f"... wrote {filename}")
-"""
